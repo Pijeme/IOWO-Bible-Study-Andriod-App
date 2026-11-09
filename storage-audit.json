@@ -1,0 +1,902 @@
+{
+  "selected_library_bytes": 677044224,
+  "selected_library_table_counts": {
+    "pij_library_documents": 79,
+    "pij_library_chunks": 69707,
+    "pij_library_source_formats": 23
+  },
+  "selected_library_group_counts": {
+    "exalting": 42,
+    "moody": 1,
+    "pulpit": 9,
+    "sermons": 36
+  },
+  "selected_library_documents": [
+    {
+      "id": 24,
+      "title": "52 Funeral Sermons-1",
+      "author": "Unknown Author",
+      "format": "epub",
+      "page_count": 58,
+      "chunk_count": 63
+    },
+    {
+      "id": 25,
+      "title": "52 Sermons About Jesus",
+      "author": "Unknown Author",
+      "format": "epub",
+      "page_count": 56,
+      "chunk_count": 59
+    },
+    {
+      "id": 26,
+      "title": "52 Sermons From the Book of Acts",
+      "author": "Unknown Author",
+      "format": "epub",
+      "page_count": 58,
+      "chunk_count": 78
+    },
+    {
+      "id": 27,
+      "title": "52 Sermons From the Gospel of John",
+      "author": "Unknown Author",
+      "format": "epub",
+      "page_count": 58,
+      "chunk_count": 71
+    },
+    {
+      "id": 382,
+      "title": "Exalting Jesus In Ephesians (Christ-Centered Exposition Commentary) (Tony Merida)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 22,
+      "chunk_count": 131
+    },
+    {
+      "id": 383,
+      "title": "Exalting Jesus In James (David Platt)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 17,
+      "chunk_count": 75
+    },
+    {
+      "id": 384,
+      "title": "Exalting Jesus in 1 2 Kings (Christ-Centered Exposition Commentary CCEC) (Tony Merida, (Author), David Platt etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 36,
+      "chunk_count": 229
+    },
+    {
+      "id": 385,
+      "title": "Exalting Jesus in 1 2 Samuel (Christ-Centered Exposition Commentary CCEC) (J. D. Greear, Heath A. Thomas, (Authors) etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 39,
+      "chunk_count": 188
+    },
+    {
+      "id": 386,
+      "title": "Exalting Jesus in 1 2 Thessalonians (Christ-Centered Exposition Commentary) (Mark Howell)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 28,
+      "chunk_count": 185
+    },
+    {
+      "id": 387,
+      "title": "Exalting Jesus in 1 2 Timothy and Titus (Christ-Centered Exposition Commentary) (David Platt, Daniel L. Akin, Tony Merida)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 8,
+      "chunk_count": 195
+    },
+    {
+      "id": 388,
+      "title": "Exalting Jesus in 1 Corinthians (Christ-Centered Exposition Commentary) (Dr. Daniel L. Akin, James Merritt)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 47,
+      "chunk_count": 210
+    },
+    {
+      "id": 389,
+      "title": "Exalting Jesus in 1 and 2 Chronicles (Dooley, Adam B.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 27,
+      "chunk_count": 181
+    },
+    {
+      "id": 390,
+      "title": "Exalting Jesus in 1,2,3 John (Christ-Centered Exposition Commentary) (Dr. Daniel L. Akin, Tony Merida etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 25,
+      "chunk_count": 121
+    },
+    {
+      "id": 391,
+      "title": "Exalting Jesus in 2 Peter, Jude (Shaddix, James)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 25,
+      "chunk_count": 139
+    },
+    {
+      "id": 392,
+      "title": "Exalting Jesus in Acts (Christ-Centered Exposition Commentary) (Tony Merida)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 50,
+      "chunk_count": 299
+    },
+    {
+      "id": 393,
+      "title": "Exalting Jesus in Colossians Philemon ( etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 24,
+      "chunk_count": 134
+    },
+    {
+      "id": 394,
+      "title": "Exalting Jesus in Daniel (Christ-Centered Exposition Commentary) (Daniel L. Akin)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 29,
+      "chunk_count": 122
+    },
+    {
+      "id": 396,
+      "title": "Exalting Jesus in Exodus (Christ-Centered Exposition Commentary CCEC) (Tony Merida, (Author), David Platt etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 24,
+      "chunk_count": 157
+    },
+    {
+      "id": 397,
+      "title": "Exalting Jesus in Ezekiel (Christ-Centered Exposition Commentary) (Landon Dowden)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 36,
+      "chunk_count": 164
+    },
+    {
+      "id": 398,
+      "title": "Exalting Jesus in Ezra and Nehemiah (Christ-Centered Exposition Commentary CCEC) (James M. Hamilton Jr., (Author) etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 8,
+      "chunk_count": 154
+    },
+    {
+      "id": 399,
+      "title": "Exalting Jesus in Galatians (Christ-Centered Exposition Commentary) (David Platt, Tony Merida)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 19,
+      "chunk_count": 104
+    },
+    {
+      "id": 400,
+      "title": "Exalting Jesus in Genesis (Bethancourt, PhillipPlatt, DavidAkin etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 31,
+      "chunk_count": 216
+    },
+    {
+      "id": 401,
+      "title": "Exalting Jesus in Hebrews (Christ-Centered Exposition Commentary) (R. Albert Mohler)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 45,
+      "chunk_count": 168
+    },
+    {
+      "id": 402,
+      "title": "Exalting Jesus in Hosea, Joel, Amos, Obadiah (Moseley, AllanAkin etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 42,
+      "chunk_count": 202
+    },
+    {
+      "id": 403,
+      "title": "Exalting Jesus in Isaiah (Andrew M. Davis)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 72,
+      "chunk_count": 273
+    },
+    {
+      "id": 404,
+      "title": "Exalting Jesus in Jeremiah, Lamentations (Christ-centred exposition) (Steven Smith Holman Bible Publishers)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 49,
+      "chunk_count": 195
+    },
+    {
+      "id": 405,
+      "title": "Exalting Jesus in Job (Christ-Centered Exposition Commentary CCEC) (David L. Allen, (Author), David Platt etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 31,
+      "chunk_count": 152
+    },
+    {
+      "id": 406,
+      "title": "Exalting Jesus in John (Christ-Centered Exposition Commentary) (Matt Carter, Josh Wredberg)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 69,
+      "chunk_count": 282
+    },
+    {
+      "id": 407,
+      "title": "Exalting Jesus in Jonah, Micah, Nahum, Habakkuk (Eric Redmond, William Curtis, Ken Fentress)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 38,
+      "chunk_count": 154
+    },
+    {
+      "id": 408,
+      "title": "Exalting Jesus in Joshua (Smith, Robert)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 34,
+      "chunk_count": 163
+    },
+    {
+      "id": 409,
+      "title": "Exalting Jesus in Judges and Ruth (Christ-Centered Exposition Commentary CCEC) (Eric C Redmond, (Author), David Platt etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 36,
+      "chunk_count": 212
+    },
+    {
+      "id": 410,
+      "title": "Exalting Jesus in Leviticus (Christ-Centered Exposition Commentary CCEC) (Allan Moseley, (Author), David Platt etc.))",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 35,
+      "chunk_count": 181
+    },
+    {
+      "id": 411,
+      "title": "Exalting Jesus in Luke (Thabiti Anyabwile)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 38,
+      "chunk_count": 245
+    },
+    {
+      "id": 412,
+      "title": "Exalting Jesus in Mark (Christ-Centered Exposition Commentary) (Daniel L. Akin)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 61,
+      "chunk_count": 270
+    },
+    {
+      "id": 413,
+      "title": "Exalting Jesus in Matthew (Christ-Centered Exposition Commentary) (David Platt)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 10,
+      "chunk_count": 245
+    },
+    {
+      "id": 414,
+      "title": "Exalting Jesus in Philippians (CCEC) (Tony Merida, Francis Chan)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 26,
+      "chunk_count": 148
+    },
+    {
+      "id": 415,
+      "title": "Exalting Jesus in Proverbs (Christ-Centered Exposition Commentary CCEC) (Jonathan Akin, Daniel L. Akin, (Author) etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 42,
+      "chunk_count": 197
+    },
+    {
+      "id": 417,
+      "title": "Exalting Jesus in Psalms 101-150 (Christ-Centered Exposition Commentary CCEC) (Johnny M. Hunt, Daniel L. Akin, Tony Merida etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 49,
+      "chunk_count": 261
+    },
+    {
+      "id": 418,
+      "title": "Exalting Jesus in Psalms 51-100 (Christ-Centered Exposition Commentary CCEC) (David Platt, Matt Mason, Jim Shaddix etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 65,
+      "chunk_count": 312
+    },
+    {
+      "id": 419,
+      "title": "Exalting Jesus in Revelation (Christ-Centered Exposition Commentary) (Dr. Daniel L. Akin)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 47,
+      "chunk_count": 246
+    },
+    {
+      "id": 420,
+      "title": "Exalting Jesus in Romans (Tony Merida)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 31,
+      "chunk_count": 190
+    },
+    {
+      "id": 421,
+      "title": "Exalting Jesus in Song of Songs (Christ-Centered Exposition Commentary CCEC) (Daniel L. Akin, (Author), David Platt etc.)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 30,
+      "chunk_count": 133
+    },
+    {
+      "id": 422,
+      "title": "Exalting Jesus in Zephaniah, Haggai, Zechariah, and Malachi (Christ-Centered Exposition Commentary) (Micah Fries, Stephen Rummage, Robby Gallaty",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 42,
+      "chunk_count": 198
+    },
+    {
+      "id": 423,
+      "title": "Exalting Jesus in the Sermon on the Mount (Danny Akin)",
+      "author": "Commentaries",
+      "format": "epub",
+      "page_count": 26,
+      "chunk_count": 109
+    },
+    {
+      "id": 893,
+      "title": "Spurgeons Sermon Outlines (Charles Spurgeon Barry L. Davis [Spurgeon etc.) (z-library.sk, 1lib.sk, z-lib.sk)",
+      "author": "Unknown Author",
+      "format": "epub",
+      "page_count": 295,
+      "chunk_count": 383
+    },
+    {
+      "id": 1056,
+      "title": "The Pulpit Commentary Complete Volume 3",
+      "author": "The Pulpit Commentary Complete",
+      "format": "epub",
+      "page_count": 17,
+      "chunk_count": 2821
+    },
+    {
+      "id": 1304,
+      "title": "The Pulpit Commentary Complete Volume 1",
+      "author": "The Pulpit Commentary Complete",
+      "format": "epub",
+      "page_count": 22,
+      "chunk_count": 4257
+    },
+    {
+      "id": 1305,
+      "title": "The Pulpit Commentary Complete Volume 2",
+      "author": "The Pulpit Commentary Complete",
+      "format": "epub",
+      "page_count": 22,
+      "chunk_count": 3440
+    },
+    {
+      "id": 1306,
+      "title": "The Pulpit Commentary Complete Volume 6",
+      "author": "Hosea to Malachi",
+      "format": "epub",
+      "page_count": 15,
+      "chunk_count": 2049
+    },
+    {
+      "id": 1307,
+      "title": "The Pulpit Commentary Complete Volume 8 Act to Philippians",
+      "author": "The Pulpit Commentary Complete",
+      "format": "epub",
+      "page_count": 112,
+      "chunk_count": 4110
+    },
+    {
+      "id": 395,
+      "title": "Exalting Jesus in Ecclesiastes (Christ-Centered Exposition Commentary CCEC) (Jonathan Akin, Daniel L. Akin, (Author) etc.)",
+      "author": "Commentaries",
+      "format": "pdf",
+      "page_count": 161,
+      "chunk_count": 156
+    },
+    {
+      "id": 416,
+      "title": "Exalting Jesus in Psalms 1-50 (Christ-Centered Exposition Commentary CCEC) (J. Josh Smith, Daniel L. Akin, (Authors) etc.)",
+      "author": "Commentaries",
+      "format": "pdf",
+      "page_count": 690,
+      "chunk_count": 688
+    },
+    {
+      "id": 465,
+      "title": "Funeral Sermons",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 35,
+      "chunk_count": 35
+    },
+    {
+      "id": 588,
+      "title": "Joy",
+      "author": "Sermons from Philippians",
+      "format": "pdf",
+      "page_count": 85,
+      "chunk_count": 85
+    },
+    {
+      "id": 835,
+      "title": "Sermon Outlines for Busy Pastors Colossians Series",
+      "author": "Rob Westbrook",
+      "format": "pdf",
+      "page_count": 80,
+      "chunk_count": 79
+    },
+    {
+      "id": 836,
+      "title": "Sermon Resources Vol 1 unprotected",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 99,
+      "chunk_count": 99
+    },
+    {
+      "id": 837,
+      "title": "Sermon Resources Vol 2",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 98,
+      "chunk_count": 98
+    },
+    {
+      "id": 838,
+      "title": "Sermon Resources Vol 3 unprotected",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 102,
+      "chunk_count": 102
+    },
+    {
+      "id": 839,
+      "title": "Sermon Resources Vol 4",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 113,
+      "chunk_count": 113
+    },
+    {
+      "id": 840,
+      "title": "Sermon Resources Vol 5",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 76,
+      "chunk_count": 76
+    },
+    {
+      "id": 841,
+      "title": "Sermon Resources Vol 6",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 85,
+      "chunk_count": 85
+    },
+    {
+      "id": 843,
+      "title": "Sermons from the Shepherds Psalm",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 28,
+      "chunk_count": 28
+    },
+    {
+      "id": 844,
+      "title": "Sermons on David",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 81,
+      "chunk_count": 81
+    },
+    {
+      "id": 845,
+      "title": "Sermons on Elijah",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 56,
+      "chunk_count": 56
+    },
+    {
+      "id": 846,
+      "title": "Sermons on Elisha",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 79,
+      "chunk_count": 79
+    },
+    {
+      "id": 847,
+      "title": "Sermons on Healing",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 24,
+      "chunk_count": 24
+    },
+    {
+      "id": 848,
+      "title": "Sermons on Joseph",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 44,
+      "chunk_count": 44
+    },
+    {
+      "id": 849,
+      "title": "Sermons on Moses",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 86,
+      "chunk_count": 86
+    },
+    {
+      "id": 850,
+      "title": "Sermons on Nehemiah",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 50,
+      "chunk_count": 50
+    },
+    {
+      "id": 851,
+      "title": "Sermons on Power",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 39,
+      "chunk_count": 39
+    },
+    {
+      "id": 852,
+      "title": "Sermons on Ruth",
+      "author": "APEO Resources",
+      "format": "pdf",
+      "page_count": 41,
+      "chunk_count": 41
+    },
+    {
+      "id": 1030,
+      "title": "The Moody Bible Commentary",
+      "author": "Michael A Rydelnik, Michael Vanlaningham",
+      "format": "pdf",
+      "page_count": 4477,
+      "chunk_count": 4390
+    },
+    {
+      "id": 1057,
+      "title": "The Pulpit Commentary Complete Volume 4",
+      "author": "Spence-Jones, Henry Donald Maurice Various",
+      "format": "pdf",
+      "page_count": 5751,
+      "chunk_count": 5749
+    },
+    {
+      "id": 1058,
+      "title": "The Pulpit Commentary Complete Volume 5",
+      "author": "Spence-Jones, Henry Donald Maurice Various",
+      "format": "pdf",
+      "page_count": 7576,
+      "chunk_count": 7573
+    },
+    {
+      "id": 1059,
+      "title": "The Pulpit Commentary Complete Volume 7",
+      "author": "Spence-Jones, Henry Donald Maurice Various",
+      "format": "pdf",
+      "page_count": 7986,
+      "chunk_count": 7985
+    },
+    {
+      "id": 1060,
+      "title": "The Pulpit Commentary Complete Volume 9 Colossians to Revelation (77 Books Now In 9 volumes)",
+      "author": "Spence-Jones, Henry Donald Maurice Various",
+      "format": "pdf",
+      "page_count": 5577,
+      "chunk_count": 5576
+    },
+    {
+      "id": 1083,
+      "title": "The Sermon Outline Bible Commentary",
+      "author": "W. Robertson Nicoll",
+      "format": "pdf",
+      "page_count": 9751,
+      "chunk_count": 9750
+    },
+    {
+      "id": 1130,
+      "title": "The-Shepherds-Staff",
+      "author": "Unknown Author",
+      "format": "pdf",
+      "page_count": 1155,
+      "chunk_count": 1142
+    },
+    {
+      "id": 1255,
+      "title": "500 Sermon Outlines for Busy Pastors",
+      "author": "Unknown Author",
+      "format": "pdf",
+      "page_count": 528,
+      "chunk_count": 527
+    }
+  ],
+  "source_document_count": 1248,
+  "sqlite_quick_check": "ok",
+  "temporary_export_removed": true,
+  "audit_date": "2026-11-08",
+  "source_workspace": "C:\\Users\\user\\Desktop\\Programming\\district4-tool-main",
+  "scope": "Local resources used by the current website Bible Study section.",
+  "status": "Resource sizing and About Developer preview only; Android app/installer not built.",
+  "plan": {
+    "features": "All current Bible Study features",
+    "offline": "Shared study resources provided with installation",
+    "appearance": "Retain website design",
+    "accounts": "Free for existing account holders using the existing Sheets-backed website login",
+    "sync": "Optional online synchronization with existing website/Google Drive",
+    "advertisements": false,
+    "paid_upgrades": false,
+    "subscriptions": false,
+    "permissions": "Owner confirms permission for all resources",
+    "guest_access": "Earlier guest-access request is retained for discussion; this audit does not change it.",
+    "developers": [
+      "Pijeme Franco Walawala",
+      "Bernard Balansag"
+    ],
+    "omit_pending_developer": true
+  },
+  "components": [
+    {
+      "name": "Bible texts and main study resources",
+      "bytes": 1122332672,
+      "basis": "Existing local database file, including dictionaries, embedded images, language resources, BE commentary, local commentary, book studies and local sermon outlines."
+    },
+    {
+      "name": "Sermon illustrations",
+      "bytes": 53104640,
+      "basis": "Existing local database file."
+    },
+    {
+      "name": "Library commentary and sermon sources: 79 books",
+      "bytes": 677044224,
+      "basis": "Actual temporary SQLite export of study-only documents, chunks and formatting, preserving existing table schemas and ordinary indexes. Passed quick_check; temporary database deleted."
+    },
+    {
+      "name": "Reader interface, fonts, icons and referenced images",
+      "bytes": 8445193,
+      "basis": "Explicit current website interface asset manifest; excludes Android runtime."
+    },
+    {
+      "name": "About Developer profiles, portraits and preview",
+      "bytes": 3385259,
+      "basis": "Staged files with the two completed developer profiles."
+    },
+    {
+      "name": "Provided app icon and splash-screen source images",
+      "bytes": 3814447,
+      "basis": "Existing Images folder in the requested app directory."
+    }
+  ],
+  "measured_resource_baseline_bytes": 1868126435,
+  "measured_resource_baseline_gb": 1.868126435,
+  "measured_resource_baseline_gib": 1.7398283211514354,
+  "ui_assets": [
+    {
+      "path": "static/bible_study.css",
+      "bytes": 66377
+    },
+    {
+      "path": "static/bible_study.js",
+      "bytes": 220034
+    },
+    {
+      "path": "static/bible_sync_notice.js",
+      "bytes": 5013
+    },
+    {
+      "path": "static/fonts/Kalam-OFL.txt",
+      "bytes": 4373
+    },
+    {
+      "path": "static/fonts/Kalam-Regular.ttf",
+      "bytes": 427360
+    },
+    {
+      "path": "static/fonts/NotoSans-Bold.ttf",
+      "bytes": 575740
+    },
+    {
+      "path": "static/fonts/NotoSans-BoldItalic.ttf",
+      "bytes": 555292
+    },
+    {
+      "path": "static/fonts/NotoSans-Italic.ttf",
+      "bytes": 552776
+    },
+    {
+      "path": "static/fonts/NotoSans-OFL.txt",
+      "bytes": 4377
+    },
+    {
+      "path": "static/fonts/NotoSans-Regular.ttf",
+      "bytes": 569208
+    },
+    {
+      "path": "static/glass_theme.css",
+      "bytes": 16084
+    },
+    {
+      "path": "static/icons/android-launchericon-144-144.png",
+      "bytes": 30842
+    },
+    {
+      "path": "static/icons/android-launchericon-192-192.png",
+      "bytes": 47873
+    },
+    {
+      "path": "static/icons/android-launchericon-48-48.png",
+      "bytes": 7343
+    },
+    {
+      "path": "static/icons/android-launchericon-512-512.png",
+      "bytes": 245139
+    },
+    {
+      "path": "static/icons/android-launchericon-72-72.png",
+      "bytes": 11662
+    },
+    {
+      "path": "static/icons/android-launchericon-96-96.png",
+      "bytes": 16867
+    },
+    {
+      "path": "static/icons/devotion-like.svg",
+      "bytes": 322
+    },
+    {
+      "path": "static/icons/devotion-share.svg",
+      "bytes": 273
+    },
+    {
+      "path": "static/icons/gear.svg",
+      "bytes": 937
+    },
+    {
+      "path": "static/img/BibleStudyBanner.png",
+      "bytes": 1929070
+    },
+    {
+      "path": "static/img/Pij Loading.png",
+      "bytes": 1448123
+    },
+    {
+      "path": "static/img/logo.png",
+      "bytes": 1272106
+    },
+    {
+      "path": "static/img/thanksgiving-hero.jpg",
+      "bytes": 303123
+    },
+    {
+      "path": "static/manifest.json",
+      "bytes": 1020
+    },
+    {
+      "path": "static/styles.css",
+      "bytes": 18756
+    },
+    {
+      "path": "static/visual_upgrade.css",
+      "bytes": 21426
+    },
+    {
+      "path": "templates/base.html",
+      "bytes": 40021
+    },
+    {
+      "path": "templates/bible_study.html",
+      "bytes": 36430
+    },
+    {
+      "path": "templates/ui_icons.html",
+      "bytes": 17226
+    }
+  ],
+  "about_assets": [
+    {
+      "path": "about-developer/index.html",
+      "bytes": 22555
+    },
+    {
+      "path": "about-developer/profiles.json",
+      "bytes": 6068
+    },
+    {
+      "path": "about-developer/images/bernard.png",
+      "bytes": 1581237
+    },
+    {
+      "path": "about-developer/images/pijeme.png",
+      "bytes": 1775399
+    }
+  ],
+  "branding_assets": [
+    {
+      "path": "Images/For icon.png",
+      "bytes": 1711208
+    },
+    {
+      "path": "Images/For Splash Screen.png",
+      "bytes": 2103239
+    }
+  ],
+  "whole_source_database_bytes": 6038126592,
+  "existing_derived_cache_bytes": 2338742146,
+  "existing_derived_cache_files": 144,
+  "excluded_personal_sermon_notes_bytes": 21237760,
+  "content_counts": {
+    "readable_bibles": {
+      "English - NIV": {
+        "books": 66,
+        "verse_entries": 31087
+      },
+      "Cebuano - APSD": {
+        "books": 66,
+        "verse_entries": 30552
+      },
+      "Tagalog - ASND": {
+        "books": 66,
+        "verse_entries": 30868
+      }
+    },
+    "supporting_kjv": {
+      "books": 66,
+      "verse_entries": 31101
+    },
+    "dictionary_entries": 80316,
+    "lexicon_entries": 14187,
+    "thompson_studies": 88,
+    "main_database_commentary_sections": 736,
+    "main_database_sermon_outlines": 1197,
+    "embedded_dictionary_image_assets": 16361,
+    "illustrations": 8961
+  },
+  "provisional_allowance": {
+    "app_and_data_gb": 3,
+    "free_space_before_installation_gb": 5,
+    "status": "Planning estimates only; replace with measured release-build requirements."
+  },
+  "limitations": [
+    "This is an exact byte count for the listed resource baseline, not a measurement of a finished Android installation or compressed download.",
+    "The existing Bible and illustration database file sizes are counted unchanged. The release export must remove all personal reading state/history. Personal sermon notes and all church account databases/credentials are excluded from the shared installation.",
+    "The 79 selected library documents match the currently active, visible public sources used by the website commentary/sermon providers. The 42 Exalting Jesus books, 1 Moody book, 9 Pulpit volumes and 36 sermon sources overlap by 9 Pulpit volumes. BE/Wiersbe and locally imported resources are already counted in the main Bible database.",
+    "Original PDFs/EPUBs are import sources; ordinary indexed study readers do not need a second copy of them. Whole-library ebook browsing outside Bible Study is outside this audit.",
+    "Existing derived caches include obsolete/duplicate fingerprints and are excluded. Fresh caches, new search indexes, Android runtime/native libraries, small sanitized public book metadata, installer compression/extraction and installation/update workspace are not measured yet.",
+    "Only locally available indexed content was audited. No Google Drive synchronization or downloads were performed.",
+    "The final Android download size, installed size and minimum installation free-space requirement must be measured from the release build. Provisional planning allowances are not tested minimums."
+  ]
+}

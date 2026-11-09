@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}IOWO D4 Bible Study{% endblock %}</title>
+<link rel="stylesheet" href="/static/styles.css"><link rel="stylesheet" href="/static/visual_upgrade.css"><link rel="stylesheet" href="/static/glass_theme.css">
+{% block page_styles %}{% endblock %}
+<link rel="stylesheet" href="/static/mobile.css">
+<script id="mobileConfig" type="application/json">{{ {'csrf':mobile_csrf,'appName':app_name,'website':'https://iowod4tool.coresite.pro'}|tojson }}</script>
+<script src="/static/mobile.js" defer></script>
+</head>
+<body class="district-ui district-glass app-no-chrome{% if request.endpoint == 'bible_study.page' %} bible-study-page{% elif request.endpoint == 'home' and stage == 'login' %} splash-body glass-splash mobile-login-page{% elif request.endpoint == 'mobile_splash' %} mobile-splash-page{% else %} mobile-page{% endif %}">
+<main class="app-main">{% block content %}{% endblock %}</main>
+{% if request.endpoint == 'bible_study.page' %}{% include "support_reminder.html" %}{% endif %}
+</body></html>

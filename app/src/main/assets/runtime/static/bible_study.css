@@ -1,0 +1,496 @@
+.bs-root{--bs-paper:#fbf5e8;--bs-panel:#fffdfa;--bs-ink:#302c25;--bs-muted:#766e60;--bs-line:#dfd3bf;--bs-accent:#805d32;--bs-split:60;--bs-font:19px;color:var(--bs-ink);max-width:1500px;margin:0 auto;padding:16px;font-family:Arial,sans-serif}
+.bs-root *{box-sizing:border-box}.bs-root button,.bs-root select{font:inherit;font-size:12px;border:1px solid var(--bs-line);border-radius:9px;background:var(--bs-panel);color:var(--bs-ink);min-height:38px;padding:8px 10px}
+.bs-search-form{margin-bottom:20px}.bs-search-form label{display:block;margin-bottom:6px;font-weight:bold}.bs-search-form>div{display:flex;gap:6px}.bs-search-form input{min-width:0;flex:1;padding:9px;border:1px solid var(--bs-line);border-radius:8px;background:var(--bs-panel);color:var(--bs-ink);font:inherit}.bs-dictionary{margin:18px 0}.bs-root .bs-source-toggle{width:100%;text-align:left;font:bold 20px Georgia,serif}.bs-entry h4{margin:0 0 8px;font:bold 18px Georgia,serif;color:var(--bs-ink)}.bs-source-content p{white-space:pre-wrap}.bs-source-content h5{font-weight:bold;font-size:1em;margin:15px 0 7px}.bs-source-image{height:auto;max-height:2em;max-width:100%;width:auto;vertical-align:middle}.bs-root button.bs-scripture-ref{display:inline;min-height:0;padding:0;border:0;border-radius:0;background:none;color:var(--bs-accent);text-decoration:underline;text-underline-offset:3px;font:inherit;white-space:normal}.bs-show-more{margin-top:8px}
+.bs-sync-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 14px;font-size:12px;line-height:1.6}.bs-sync-tools details{flex-basis:100%;padding:10px;background:var(--bs-panel);border:1px solid var(--bs-line);border-radius:10px}.bs-sync-tools summary{cursor:pointer}.bs-sync-tools p{margin:8px 0}.bs-verse{margin:0 0 14px}.bs-root button.bs-word{display:inline;min-height:0;padding:0;border:0;border-radius:2px;background:transparent;color:inherit;font:inherit;vertical-align:baseline}.bs-root button.bs-word:hover,.bs-root button.bs-word:focus-visible{text-decoration:underline;text-decoration-color:var(--bs-accent)}.bs-entry{margin:14px 0;padding:14px;border:1px solid var(--bs-line);border-radius:10px;white-space:pre-wrap}.bs-entry p{margin:7px 0}.bs-reference-list{display:flex;flex-wrap:wrap;gap:6px}.bs-sync-tools [hidden],.bs-root [hidden]{display:none!important}
+#bibleStudyRoot h1,#bibleStudyRoot h2,#bibleStudyRoot h3,#bibleStudyRoot h4,#bibleStudyRoot h5{color:var(--bs-ink);letter-spacing:normal}#bibleStudyRoot select{color:var(--bs-ink);background:var(--bs-panel);border-color:var(--bs-line);border-radius:9px}
+.bs-root button{cursor:pointer}.bs-root button:disabled{cursor:default;opacity:.5}.bs-root button:focus-visible,.bs-root select:focus-visible,.bs-divider:focus-visible{outline:3px solid #7094cf;outline-offset:2px}
+.bs-header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:14px}.bs-header h1{margin:6px 0 0;font:700 34px/1.15 Georgia,serif}.bs-back{color:var(--bs-accent);font-size:12px;text-decoration:none}.bs-modes{display:flex;flex-wrap:wrap;gap:6px}.bs-modes button[aria-pressed=true]{background:#6d573e;color:#fff;border-color:#6d573e}
+.bs-preview{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:11px 14px;margin-bottom:14px;border:1px solid var(--bs-line);border-radius:12px;background:var(--bs-panel);font-size:12px;line-height:1.5}.bs-preview strong{color:var(--bs-accent);white-space:nowrap}
+.bs-layout{display:grid;grid-template-columns:minmax(0,calc(var(--bs-split)*1%)) 10px minmax(0,1fr);height:72dvh;min-height:440px;border:1px solid var(--bs-line);border-radius:15px;overflow:hidden;background:var(--bs-line)}
+.bs-pane{min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;background:var(--bs-panel)}.bs-bible{background:var(--bs-paper)}.bs-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:12px;border-bottom:1px solid var(--bs-line);background:var(--bs-paper);position:sticky;top:0;z-index:2}.bs-toolbar select{max-width:100%}.bs-translation{font-size:11px;font-weight:700;color:var(--bs-muted);padding:5px}
+.bs-scripture{max-width:820px;margin:0 auto;padding:30px 36px 40px;font:var(--bs-font)/1.85 Georgia,'Times New Roman',serif}.bs-kicker{margin:0;color:var(--bs-muted);font:700 10px/1.5 Arial,sans-serif;text-transform:uppercase;letter-spacing:.09em}.bs-scripture h2{margin:12px 0 0;font-size:2.2em;line-height:1.2}.bs-chapter-heading{margin:8px 0 28px;color:var(--bs-muted);font-size:1.1em}.bs-verse-number{font:700 .65em Arial,sans-serif;vertical-align:super;color:var(--bs-muted)}.bs-red-letter{color:#a12e2e}.bs-word{font:inherit;background:transparent;color:inherit;cursor:pointer}
+.bs-empty{padding:22px 10px 18px;border-top:1px solid var(--bs-line);text-align:center}.bs-empty-mark{display:block;color:#a68b62;font-size:36px}.bs-empty h3{font-size:1.1em;line-height:1.4;margin:8px 0}.bs-empty p{color:var(--bs-muted);font-size:.85em;line-height:1.7;margin:12px auto;max-width:440px}
+.bs-personal-tools{display:flex;flex-wrap:wrap;align-items:center;gap:7px;padding:12px 16px;border-top:1px solid var(--bs-line)}.bs-personal-tools span{font-size:11px;color:var(--bs-muted);line-height:1.5}
+.bs-divider{display:flex;align-items:center;justify-content:center;background:var(--bs-line);cursor:col-resize;touch-action:none}.bs-divider span{width:3px;height:35px;border-radius:3px;background:#a99577}.bs-divider:focus-visible{outline-offset:-3px}
+.bs-study-header{padding:24px 25px 18px;border-bottom:1px solid var(--bs-line)}.bs-study-header h2{font:700 28px Georgia,serif;margin:7px 0}.bs-study-header>p:last-child{margin:0;color:var(--bs-muted);font-size:12px}.bs-study-content{padding:22px 25px;line-height:1.75;font-size:13px}.bs-study-content h3{font:700 20px/1.4 Georgia,serif;margin:0 0 10px}.bs-result-guide{margin:20px 0}.bs-result-guide p{margin:16px 0}.bs-badge{display:table;margin-bottom:6px;padding:3px 8px;border-radius:6px;font:700 10px/1.5 Arial,sans-serif;letter-spacing:.03em}.bs-verified{background:#e3f0e6;color:#286442}.bs-kjv{background:#fff0cc;color:#845d1e}.bs-notice{padding:13px;border-left:3px solid #b49260;background:var(--bs-paper);color:var(--bs-muted)}.bs-concordance{border-top:1px solid var(--bs-line);margin-top:24px;padding-top:20px}.bs-concordance p{color:var(--bs-muted)}
+.bs-save-status{font-size:11px;line-height:1.5;color:var(--bs-muted);margin:11px 2px 0}.bs-root[data-theme=light]{--bs-paper:#fff;--bs-panel:#fbfcff}.bs-root[data-theme=dark]{--bs-paper:#24282e;--bs-panel:#2b3037;--bs-ink:#eee9df;--bs-muted:#bfb6a6;--bs-line:#47423a;--bs-accent:#e3c48e}.bs-root[data-theme=dark] .bs-red-letter{color:#ffad9f}
+.bs-root[data-mode=bible] .bs-study,.bs-root[data-mode=study] .bs-bible,.bs-root:not([data-mode=split]) .bs-divider{display:none}.bs-root:not([data-mode=split]) .bs-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+.bs-root.bs-fullscreen{position:fixed;inset:0;z-index:40000;max-width:none;margin:0;padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));height:100dvh;display:flex;flex-direction:column;background:var(--bs-paper);overflow:hidden}.bs-root.bs-fullscreen .bs-layout{height:auto;min-height:0;flex:1}.bs-root.bs-fullscreen .bs-header{flex-shrink:0}.bs-root.bs-fullscreen .bs-preview{display:none}.bs-root.bs-fullscreen .bs-save-status{flex-shrink:0}
+.bs-verse-dialog{width:min(92vw,540px);padding:22px;border:1px solid var(--bs-line);border-radius:14px;background:var(--bs-panel);color:var(--bs-ink)}.bs-verse-dialog::backdrop{background:#18243199}.bs-dialog-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.bs-verse-dialog #bsVerseText{font:20px/1.8 Georgia,serif}.bs-attribution{color:var(--bs-muted);font-size:11px}.bs-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media(max-width:700px){.bs-root{padding:10px}.bs-header{align-items:flex-start;flex-direction:column;gap:12px}.bs-header h1{font-size:29px}.bs-modes{width:100%}.bs-modes button{flex:1;font-size:11px;padding:8px 6px}.bs-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,calc(var(--bs-split)*1%)) 12px minmax(0,1fr);height:80dvh;min-height:500px}.bs-divider{cursor:row-resize}.bs-divider span{width:35px;height:3px}.bs-toolbar{padding:9px;gap:5px}.bs-toolbar select{font-size:16px}.bs-scripture{padding:22px 21px 28px}.bs-study-header{padding:15px 18px}.bs-study-content{padding:18px}.bs-save-status{font-size:10px}}
+/* Thompson reader: topic controls have their own margin and click targets. */
+.bs-root .bs-verse-row{display:grid;grid-template-columns:minmax(0,1fr) 94px;column-gap:18px;align-items:start}.bs-root .bs-chain-margin{border-left:1px solid var(--bs-line);padding-left:9px;font:11px/1.6 Arial,sans-serif;overflow-wrap:anywhere}.bs-root .bs-chain-margin button{display:block;padding:2px 0;min-height:28px;background:transparent;border:0;border-radius:0;text-align:left;color:var(--bs-accent);font:inherit}.bs-chain-margin summary{cursor:pointer;font-size:11px}.bs-chain-margin details{margin:3px 0}.bs-root .bs-chain-key{font-weight:bold;margin-right:4px}.bs-root .bs-word.is-selected{background:#ead29070;box-shadow:0 0 0 2px #ead29050}.bs-root button.bs-word.bs-red-letter,.bs-red-letter{color:#ae2638}.bs-root[data-theme=dark] button.bs-word.bs-red-letter{color:#ffad9f}.bs-scripture #bsVerses>h3{font-size:1.03em;line-height:1.4;margin:22px 0 13px;color:var(--bs-accent)}.bs-poetry{padding-left:1em;text-indent:-1em}.bs-chapter-end{display:flex;justify-content:space-between;gap:10px;margin:28px 0 20px;border-top:1px solid var(--bs-line);padding-top:16px}.bs-chapter-heading{font-variant:small-caps;letter-spacing:.04em}.bs-evidence{font:11px/1.6 Arial,sans-serif;color:var(--bs-accent);background:var(--bs-paper);padding:8px;border-radius:7px}.bs-entry{white-space:normal}
+.bs-navigation-dialog{width:min(94vw,620px);max-height:85dvh;padding:18px;border:1px solid var(--bs-line);border-radius:16px;background:var(--bs-panel);color:var(--bs-ink)}.bs-navigation-dialog::backdrop{background:#18243199}.bs-navigation-tabs{display:flex;gap:8px;margin:16px 0}.bs-navigation-tabs button{flex:1}.bs-navigation-tabs button[aria-selected=true]{background:#6d573e;color:white}.bs-navigation-body{overflow:auto;max-height:50dvh}.bs-book-group,.bs-chapter-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;margin:10px 0 20px}.bs-root .bs-book-group button,.bs-root .bs-chapter-grid button{padding:6px 3px;min-height:43px;font-size:12px}.bs-root button[data-book-group=law]{background:#f1e5d2;color:#5f492c}.bs-root button[data-book-group=history]{background:#e0eadf;color:#365839}.bs-root button[data-book-group=poetry]{background:#f4e3df;color:#7b4842}.bs-root button[data-book-group=prophets]{background:#e9e1ef;color:#654477}.bs-root button[data-book-group=gospel]{background:#dceaf1;color:#355b72}.bs-root button[data-book-group=letters]{background:#e4e3f2;color:#4a4876}.bs-root button[data-book-group=apocalypse]{background:#f0e6c9;color:#6a5725}.bs-book-group button[aria-current=true],.bs-chapter-grid button[aria-current=true]{outline:2px solid #8d6a36;outline-offset:1px}.bs-direct-reference{display:flex;gap:8px;border-top:1px solid var(--bs-line);padding-top:14px}.bs-direct-reference input{width:100%;min-width:0;padding:10px;border:1px solid var(--bs-line);border-radius:8px;background:var(--bs-paper);color:var(--bs-ink);font:inherit}.bs-history-list{max-height:60dvh;overflow:auto;margin-top:16px}.bs-root .bs-history-item{display:block;text-align:left;width:100%;margin-bottom:8px;padding:12px;line-height:1.6}.bs-history-item small{display:block;color:var(--bs-muted)}.bs-chain-dialog{max-height:80dvh;overflow:auto}.bs-chain-dialog .bs-source-content{font:16px/1.8 Georgia,serif}.bs-root dialog input:focus-visible{outline:3px solid #7094cf;outline-offset:2px}
+@media(max-width:700px){.bs-root .bs-verse-row{grid-template-columns:minmax(0,1fr) 72px;column-gap:10px}.bs-root .bs-chain-margin{padding-left:6px;font-size:10px}.bs-scripture{padding:22px 15px}.bs-navigation-dialog{position:fixed;inset:auto 0 0;margin:0;width:100%;max-width:none;max-height:76dvh;border-radius:20px 20px 0 0;padding-bottom:max(18px,env(safe-area-inset-bottom))}.bs-navigation-dialog.bs-expanded{height:96dvh;max-height:96dvh}.bs-navigation-dialog.bs-expanded .bs-navigation-body{max-height:72dvh}.bs-book-group,.bs-chapter-grid{gap:6px}.bs-navigation-dialog input{font-size:16px}}
+.bs-root .bs-chain-key{display:block;line-height:1.3}.bs-root .bs-chain-margin button{margin-bottom:5px;overflow-wrap:break-word}.bs-root .bs-chain-margin{overflow-wrap:break-word}
+.bs-root .bs-chain-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.bs-root .bs-chain-margin button:focus-visible .bs-chain-name{display:block}
+/* Preserve the numerical index's sections, indented lists and verse paragraphs. */
+.bs-chain-dialog{width:min(94vw,680px);padding:0 24px 20px;scroll-padding-top:85px}
+.bs-chain-dialog .bs-dialog-head{position:sticky;top:0;z-index:1;background:var(--bs-panel);padding:18px 0 14px;border-bottom:1px solid var(--bs-line);font:700 15px/1.5 Arial,sans-serif}
+.bs-chain-dialog .bs-source-content{font:17px/1.65 Georgia,'Times New Roman',serif;overflow-wrap:break-word;padding-top:8px}
+.bs-chain-dialog .bs-source-content p{margin:0 0 12px;white-space:normal}
+.bs-chain-dialog .bs-source-content .bs-chain-section{font:700 17px/1.5 Georgia,serif;margin:18px 0 5px;padding-left:12px}
+.bs-chain-dialog .bs-source-content .bs-chain-subheading{font:700 italic 16px/1.5 Georgia,serif;margin:16px 0 5px;padding-left:12px}
+.bs-chain-dialog .bs-source-content .bs-chain-references{font-size:15px;line-height:1.65;margin:0 0 16px;padding-left:24px}
+.bs-chain-dialog .bs-source-content .bs-chain-verse{padding-left:14px;text-indent:-14px;margin-bottom:12px}
+.bs-chain-dialog .bs-chain-verse .bs-scripture-ref{font-weight:700}
+.bs-chain-dialog .bs-source-content .bs-chain-example{margin:3px 0;padding-left:24px}
+.bs-chain-dialog .bs-source-content .bs-chain-related{border-top:1px solid var(--bs-line);padding:12px 0 0 12px;margin-top:16px;font-size:15px}
+.bs-root .bs-chain-dialog button.bs-scripture-ref{color:#a52c40;text-decoration-thickness:1px}
+.bs-root[data-theme=dark] .bs-chain-dialog button.bs-scripture-ref{color:#ffad9f}
+@media(max-width:700px){.bs-chain-dialog{padding:0 18px 16px}.bs-chain-dialog .bs-source-content{font-size:16px}.bs-chain-dialog .bs-source-content .bs-chain-references{padding-left:16px}}
+@font-face{font-family:StudyHandwriting;src:url('fonts/Kalam-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+.bs-study-tabs{display:flex;gap:3px;padding:10px 9px 0;background:var(--bs-line);position:sticky;top:0;z-index:3;isolation:isolate}
+.bs-root .bs-study-tabs button{flex:1;min-width:0;border:0;border-radius:13px 13px 0 0;background:transparent;padding:12px 8px;font:12px/1.3 Arial,sans-serif;white-space:nowrap;position:relative}
+.bs-root .bs-study-tabs button[aria-selected=true]{background:var(--bs-panel);font-weight:700;box-shadow:0 -2px 5px #302c2508}
+.bs-root .bs-study-tabs button[aria-selected=true]::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:3px;background:var(--bs-panel)}
+.bs-root .bs-study-tabs button:disabled{opacity:.5}
+.bs-study-header h2.bs-handwritten{font:italic 400 35px/1.4 StudyHandwriting,'Segoe Print',cursive;margin:0}
+.bs-root button.bs-chain-ref{display:inline;min-height:0;padding:0;border:0;border-radius:0;background:none;color:var(--bs-accent);font:inherit;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.bs-chain-dialog .bs-dialog-head strong{flex:1;min-width:0}.bs-chain-dialog .bs-dialog-head button{flex-shrink:0}
+.bs-concordance-entry{margin:0 0 24px}.bs-concordance-entry h4{font:700 18px/1.5 Georgia,serif;margin:0 0 8px}
+.bs-concordance-related{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin:0 0 16px;color:var(--bs-muted);font-size:12px}
+.bs-root button.bs-concordance-form{font-size:11px;padding:4px 7px;min-height:29px}
+.bs-concordance-excerpts{font:15px/1.65 Georgia,serif}.bs-concordance-excerpts p{margin:0;padding:9px 0;border-bottom:1px solid var(--bs-line);white-space:normal}
+.bs-concordance-excerpts .bs-scripture-ref{font-weight:bold}
+@media(max-width:700px){.bs-study-tabs{padding:8px 6px 0;gap:1px}.bs-root .bs-study-tabs button{font-size:11px;padding:12px 5px}.bs-study-header h2.bs-handwritten{font-size:32px}.bs-chain-dialog .bs-dialog-head{gap:7px}}
+/* Shared heading system: every tool uses the same font and source banner. */
+.bs-tool-word{--bs-tool-tint:#c4a052}.bs-tool-concordance{--bs-tool-tint:#8fa58a}.bs-tool-commentary{--bs-tool-tint:#839eb9}.bs-tool-book{--bs-tool-tint:#bf907b}
+.bs-tool-sermon{--bs-tool-tint:#a48fa7}#bsSermonTab{--bs-tab-accent:#a48fa7}
+.bs-tool-illustrations{--bs-tool-tint:#9caa7c}#bsIllustrationsTab{--bs-tab-accent:#9caa7c}
+.bs-illustration-modes{display:flex;gap:6px;margin-bottom:18px}
+.bs-root .bs-illustration-modes button{flex:1;min-width:0;white-space:normal;line-height:1.5}
+.bs-root .bs-illustration-modes button[aria-selected=true]{background:var(--bs-line);font-weight:bold}
+.bs-illustration-source{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 14px}
+.bs-illustration-source select{min-width:0;max-width:100%}
+.bs-illustration-alphabet{display:flex;flex-wrap:wrap;gap:4px;margin:12px 0 18px}
+.bs-root .bs-illustration-alphabet button{min-width:34px;min-height:38px;padding:5px}
+.bs-root .bs-illustration-alphabet button[aria-pressed=true]{background:var(--bs-line);font-weight:bold}
+.bs-illustration-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:6px;margin:12px 0}
+.bs-root .bs-illustration-topics button{text-align:left;white-space:normal;overflow-wrap:anywhere}
+.bs-illustration-card{padding:18px 0;border-bottom:1px solid var(--bs-line);overflow-wrap:anywhere}
+.bs-illustration-card h4{margin:0 0 8px;font:700 18px/1.5 Georgia,serif}
+.bs-illustration-card p{margin:8px 0}.bs-illustration-match{font-size:12px;color:var(--bs-accent)}
+#bsIllustrationsReader{overflow-wrap:anywhere}#bsIllustrationsReader>h3{margin-top:18px}
+#bsIllustrationsContent{font:17px/1.8 Georgia,serif}#bsIllustrationsContent p{white-space:pre-wrap;margin:0 0 1em}
+.bs-illustration-references{border-top:1px solid var(--bs-line);padding:10px 0;margin-top:14px}
+.bs-illustration-references p{margin:7px 0;overflow-wrap:anywhere}
+#bsIllustrationsReader .bs-scripture-ref{white-space:normal;text-align:left}
+.bs-study>.bs-study-tabs{overflow-x:auto;scrollbar-width:thin}.bs-root .bs-study>.bs-study-tabs button{min-width:91px;flex:1 0 auto}
+.bs-root .bs-sermon-title{display:block;width:100%;text-align:left;margin:0;padding:13px 8px;border:0;border-bottom:1px solid var(--bs-line);border-radius:0;font:16px/1.6 Georgia,serif}
+#bsSermonContent{font:16px/1.8 Georgia,serif;overflow-wrap:anywhere}#bsSermonContent p{white-space:pre-wrap;margin:3px 0}#bsSermonContent h5{margin:18px 0 6px;font-size:17px}
+#bsSermonContent .bs-commentary-reference{font-style:italic;font-weight:600;color:var(--bs-accent);margin:6px 0 18px}
+.bs-commentary-text.bs-source-lines p{margin:3px 0}
+.bs-commentary-verse-target{background:#fff0b3;border-radius:3px;box-shadow:-3px 0 #c59635}
+.bs-root[data-theme=dark] .bs-commentary-verse-target{background:#5d4b25;box-shadow:-3px 0 #d9b756}
+#bsGreekDialog{width:min(94vw,640px)}
+#bsGreekContent{font:16px/1.75 Georgia,serif;overflow-wrap:break-word}
+#bsGreekContent p{margin:3px 0}
+#bsGreekActions:not(:empty){margin:12px 0}
+.bs-root button.bs-greek-ref{display:inline;min-height:0;padding:0;border:0;border-radius:0;background:none;color:#16748b;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;font:inherit;white-space:normal;touch-action:pan-y;user-select:text;-webkit-user-select:text}
+.bs-root[data-theme=dark] button.bs-greek-ref{color:#8dd6ef}
+.bs-root button.bs-greek-ref:focus-visible{outline:2px solid var(--bs-accent);outline-offset:3px}
+.bs-source-list{margin:6px 0 12px;padding-left:26px}.bs-source-list li{padding-left:3px;margin:5px 0}
+.bs-source-list .bs-source-list{margin:5px 0 8px}.bs-source-list li>p{margin:3px 0!important}
+.bs-source-content .bs-sermon-heading{font-size:19px!important;font-weight:700;margin:25px 0 10px!important;line-height:1.5}
+.bs-source-content .bs-sermon-subpoint{padding-left:16px;margin:16px 0 8px!important}
+.bs-source-content .bs-sermon-reference{margin:0 0 18px!important;line-height:1.6}
+.bs-source-content .bs-sermon-paragraph{margin:10px 0!important;white-space:normal!important}
+.bs-source-quote{padding-left:16px;border-left:2px solid var(--bs-line);font-style:italic}
+@media(max-width:700px){.bs-source-list{padding-left:22px}.bs-source-content .bs-sermon-heading{font-size:18px!important}.bs-source-content .bs-sermon-subpoint{padding-left:10px}}
+[data-study-source]{user-select:text;-webkit-user-select:text}[data-study-source] mark{color:inherit;padding:0;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+[data-study-source] .bs-underline{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.bs-root .bs-study-mark{display:inline;min-height:24px;padding:0 5px;margin-left:4px;color:var(--bs-accent);font-size:13px;vertical-align:super}
+.bs-image-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.bs-study-header.bs-banner{position:relative;isolation:isolate;min-height:106px;padding:20px 24px;display:flex;align-items:center;justify-content:center;border-bottom:0;margin:8px 10px 0}
+.bs-banner::before,.bs-banner::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('img/BibleStudyBanner.png') center/100% 100% no-repeat}
+.bs-banner::after{background:var(--bs-tool-tint,#c4a052);opacity:.42;mask:url('img/BibleStudyBanner.png') center/100% 100% no-repeat;-webkit-mask:url('img/BibleStudyBanner.png') center/100% 100% no-repeat;mix-blend-mode:multiply}
+#bibleStudyRoot .bs-banner h2{font:italic 400 36px/1.35 StudyHandwriting,'Segoe Print',cursive;margin:0;color:#352c22;text-align:center}
+.bs-root .bs-study-tabs button[aria-selected=true]{box-shadow:inset 0 3px var(--bs-tab-accent,#c4a052)}
+#bsConcordanceTab{--bs-tab-accent:#8fa58a}#bsCommentaryTab{--bs-tab-accent:#839eb9}#bsBookStudyTab{--bs-tab-accent:#bf907b}
+.bs-reader-tabs{position:sticky;top:0}.bs-toolbar{top:var(--bs-reader-tab-height,50px);z-index:2}
+.bs-testaments{display:flex;gap:7px;margin:0 0 12px}.bs-root .bs-testaments button{flex:1;font-weight:700}
+.bs-root .bs-testaments button[aria-pressed=true]{background:var(--bs-accent);color:var(--bs-panel)}
+.bs-root .bs-book-group button[aria-current=true]{outline:3px solid var(--bs-accent);outline-offset:1px;font-weight:700;box-shadow:0 0 0 3px var(--bs-panel)}
+.bs-person-study{margin:0 0 24px;padding:15px;border:1px solid var(--bs-line);border-radius:12px;background:var(--bs-paper)}
+.bs-person-study h4{font:700 20px/1.4 Georgia,serif;margin:8px 0 12px}.bs-person-choice{display:block;width:100%;text-align:left;margin:7px 0;line-height:1.6!important}
+.bs-person-study details{margin:12px 0}.bs-person-study summary{cursor:pointer;font-weight:700;line-height:1.6}
+.bs-person-study .bs-source-content,.bs-book-study .bs-source-content{font:15px/1.75 Georgia,serif;overflow-wrap:break-word}
+.bs-book-study{max-width:900px;margin:auto;font-size:15px}.bs-book-study h3{font-size:26px}.bs-book-study .bs-source-content p{white-space:normal;margin:8px 0}
+.bs-book-study .bs-source-content h5{font:700 17px/1.6 Georgia,serif;margin:22px 0 9px}
+.bs-source-pages{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.bs-source-dialog{width:min(96vw,1100px);max-height:90dvh;overflow:auto}.bs-source-dialog .bs-dialog-head{position:sticky;top:0;background:var(--bs-panel);padding:10px 0;z-index:1}
+#bsSourceImage{display:block;max-width:100%;height:auto;margin:10px auto}
+.bs-root[data-theme=dark] .bs-banner h2{color:#352c22}
+@media(max-width:700px){.bs-study-header.bs-banner{min-height:95px;margin:5px 5px 0;padding:18px 16px}#bibleStudyRoot .bs-banner h2{font-size:32px}.bs-testaments button{font-size:12px}.bs-person-study{padding:12px}}
+/* Desktop workspace fills the available window below the shared site header. */
+@media(min-width:701px){
+  .district-glass .app-main:has(>.bs-root),.app-main:has(>.bs-root){width:100%;max-width:none;margin:0;padding:10px 14px 8px}
+  .bs-root{max-width:none;margin:0;padding:0;height:calc(100dvh - var(--bs-page-top,90px) - 8px);min-height:520px;display:flex;flex-direction:column}
+  .bs-root>.bs-header,.bs-root>.bs-preview,.bs-root>.bs-sync-tools,.bs-root>.bs-save-status{flex-shrink:0}
+  .bs-root .bs-layout{height:auto;min-height:0;flex:1}
+}
+.bs-scripture{touch-action:pan-y pinch-zoom}
+.bs-book-study .bs-source-content .bs-major-chain{margin:0;border-bottom:1px solid var(--bs-line)}
+.bs-root .bs-major-chain button.bs-chain-ref{display:block;width:100%;padding:9px 0;text-decoration:none;line-height:1.6}
+.bs-root .bs-major-chain button.bs-chain-ref:hover{text-decoration:underline}
+.bs-condensed-outline{border-top:1px solid var(--bs-line);margin-top:24px;padding-top:18px}
+.bs-condensed-outline h4{font:bold 20px/1.5 Georgia,serif}
+.bs-commentary-author{font-weight:700;margin:0;color:var(--bs-accent)}
+.bs-commentary-guide{color:var(--bs-muted);margin:4px 0 24px;font-size:12px}
+.bs-commentary-entry{margin:20px 0 30px}.bs-commentary-entry h4{font:700 22px/1.4 Georgia,serif;margin:5px 0 10px}
+.bs-commentary-volume{font-weight:700;color:var(--bs-accent);margin:0}
+.bs-commentary-range{font-size:12px;color:var(--bs-muted);padding-bottom:12px;border-bottom:1px solid var(--bs-line)}
+.bs-commentary-text{font:16px/1.8 Georgia,serif;overflow-wrap:break-word}
+.bs-commentary-text p{white-space:pre-wrap;margin:12px 0}.bs-commentary-text summary{font:700 13px/1.8 Arial,sans-serif;color:var(--bs-accent);cursor:pointer;padding:8px 0}
+.bs-chain-chart{display:block;width:100%;height:auto;margin:12px 0}
+/* Keep diagnostics in a developer dialog, leaving the reader directly below its header. */
+.bs-header-actions,.bs-sync-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.bs-header-actions{justify-content:flex-end;gap:12px}
+.bs-sync-dialog{width:min(94vw,620px);max-height:85dvh;overflow:auto}
+.bs-sync-dialog .bs-dialog-head{padding-bottom:12px;border-bottom:1px solid var(--bs-line)}
+.bs-sync-dialog .bs-sync-tools{display:block;margin:16px 0 0;font-size:13px}
+.bs-sync-dialog .bs-sync-tools details{margin-top:14px}.bs-sync-dialog .bs-sync-tools p{margin:10px 0}
+.bs-commentary-series{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.bs-root .bs-commentary-series button{padding:9px 15px;border-radius:18px;line-height:1.4}
+.bs-root .bs-commentary-series button[aria-pressed=true]{background:#dce7f0;color:#283f56;border-color:#839eb9;font-weight:700}
+.bs-root[data-theme=dark] .bs-commentary-series button[aria-pressed=true]{background:#42576b;color:#f1f5fa}
+.bs-commentary-controls{position:sticky;top:var(--bs-study-tab-height,0px);z-index:2;background:var(--bs-panel);padding:6px 0;box-shadow:0 5px 8px -7px #302c2560}
+.bs-commentary-controls .bs-commentary-series{margin:0}
+.bs-commentary-theme-box{padding:5px;margin-top:5px;border:1px solid #c9ab71;border-radius:9px;background:#fff2d9;color:#644b29}
+.bs-commentary-theme-box>strong{display:block;font:600 11px/1.3 Arial,sans-serif;margin-bottom:3px}
+.bs-commentary-theme-list{display:flex;gap:5px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:1px 1px 2px}
+.bs-root .bs-commentary-theme{flex:0 0 190px;max-width:75vw;text-align:left;padding:4px 7px;min-height:36px;font:11px/1.3 Arial,sans-serif;background:#fffaf0;border-color:#d5bd94;color:#644b29;white-space:normal}
+.bs-commentary-theme span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-weight:600}
+.bs-commentary-theme small{display:block;font-size:9px;margin-top:1px}
+.bs-root .bs-commentary-theme[aria-pressed=true],.bs-root .bs-pulpit-sections button[aria-pressed=true]{background:#805d32;border-color:#805d32;color:#fff}
+.bs-pulpit-sections{display:flex;gap:6px}.bs-root .bs-pulpit-sections button{flex:1;min-height:34px;padding:5px 9px;font:12px/1.4 Arial,sans-serif;background:#fffaf0;border-color:#d5bd94;color:#644b29}
+.bs-root[data-theme=dark] .bs-commentary-theme-box{background:#3d3426;border-color:#97805b;color:#f1dfbf}
+.bs-root[data-theme=dark] .bs-commentary-theme,.bs-root[data-theme=dark] .bs-pulpit-sections button{background:#483d2c;border-color:#97805b;color:#f1dfbf}
+.bs-root[data-theme=dark] .bs-commentary-theme[aria-pressed=true],.bs-root[data-theme=dark] .bs-pulpit-sections button[aria-pressed=true]{background:#866536;color:#fff}
+@media(max-width:700px){#bsCommentaryChoices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}.bs-root #bsCommentaryChoices button{padding:6px 3px;font-size:11px;border-radius:9px;white-space:normal}.bs-commentary-theme-box{padding:5px}.bs-root .bs-commentary-theme{flex-basis:165px;padding:4px 6px}}
+#bsReaderError{padding:12px;border-left:3px solid var(--bs-accent);font:14px/1.6 Arial,sans-serif}
+@media(max-width:700px){.bs-header-actions{width:100%;justify-content:flex-start}.bs-sync-actions{width:100%}.bs-sync-actions button{flex:1}.bs-root .bs-commentary-series button{flex:1;padding:9px 10px}}
+/* Exalting Jesus: the source outline and its body sections share a clear hierarchy. */
+.bs-commentary-text .bs-commentary-main-idea{padding:12px 15px;background:var(--bs-paper);border-left:3px solid #839eb9}
+.bs-commentary-outline-card{margin:18px 0 28px;padding:15px 19px;background:var(--bs-paper);border:1px solid var(--bs-line);border-radius:10px}
+.bs-commentary-outline-card>h5{margin:0 0 12px!important;font:700 16px/1.5 Arial,sans-serif}
+.bs-commentary-text .bs-commentary-outline{margin:7px 0;line-height:1.65}
+.bs-commentary-outline.bs-commentary-level-1{font-weight:700;margin-top:14px}
+.bs-commentary-outline.bs-commentary-level-2,.bs-commentary-outline-continuation.bs-commentary-level-2{padding-left:20px}
+.bs-commentary-outline.bs-commentary-level-3,.bs-commentary-outline-continuation.bs-commentary-level-3{padding-left:40px;font-size:15px}
+.bs-commentary-text .bs-commentary-outline-continuation{margin:0 0 7px}
+.bs-commentary-text .bs-commentary-heading{font:700 22px/1.5 Georgia,serif;margin:32px 0 8px;padding:15px 0 0;border-top:1px solid var(--bs-line);color:var(--bs-ink)}
+.bs-commentary-text .bs-commentary-heading.bs-commentary-level-2{font-size:18px;margin:24px 0 8px;padding:0 0 0 14px;border:0}
+.bs-commentary-text .bs-commentary-heading.bs-commentary-level-3{font-size:16px;margin:18px 0 8px;padding:0 0 0 28px;border:0}
+.bs-commentary-marker{color:var(--bs-accent);margin-right:5px}
+.bs-commentary-text .bs-commentary-reference{margin:0 0 18px;font-size:14px;font-style:italic}
+.bs-commentary-text .bs-commentary-section{font:700 19px/1.5 Georgia,serif;margin:28px 0 12px}
+@media(max-width:700px){.bs-commentary-outline-card{padding:12px}.bs-commentary-text .bs-commentary-heading{font-size:20px}.bs-commentary-text .bs-commentary-heading.bs-commentary-level-2{font-size:17px;padding-left:8px}}
+/* The shared site header and one compact toolbar leave the screen for reading. */
+.bible-study-page{overflow:hidden}.bible-study-page .app-header{padding:8px 12px}
+.bible-study-page .app-subtitle{display:none}.bible-study-page .app-title{display:flex;align-items:center;gap:16px;white-space:nowrap}
+.app-section-title{font:600 15px/1.3 Georgia,serif;padding-left:16px;border-left:1px solid #ffffff65}
+.bible-study-page .pij-launcher{width:42px;height:42px;right:10px;bottom:max(8px,env(safe-area-inset-bottom))}
+.app-main:has(>.bs-root),.district-glass .app-main:has(>.bs-root){width:100%;max-width:none;margin:0;padding:0}
+.bs-root,.bs-root.bs-fullscreen{position:relative;inset:auto;z-index:auto;max-width:none;margin:0;padding:0;height:var(--bs-workspace-height,calc(100dvh - 62px));min-height:0;display:flex;flex-direction:column;overflow:hidden;background:var(--bs-paper)}
+.bs-root .bs-layout,.bs-root.bs-fullscreen .bs-layout{flex:1;height:auto;min-height:0;border-radius:0;border-left:0;border-right:0;grid-template-columns:minmax(0,calc((100% - 12px)*var(--bs-split)/100)) 12px minmax(0,1fr)}
+.bs-root:not([data-mode=split]) .bs-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+.bs-root .bs-toolbar{position:relative;top:auto;z-index:4;flex-shrink:0;display:flex;flex-wrap:nowrap;gap:12px;padding:7px 12px;background:var(--bs-panel)}
+.bs-toolbar-main,.bs-toolbar-secondary{display:flex;align-items:center;gap:6px;min-width:0}.bs-toolbar-main{flex:1}
+.bs-toolbar-main #bsNavigate{min-width:140px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bs-toolbar-secondary{justify-content:space-between}.bs-toolbar-secondary select{font-size:12px;max-width:150px}
+.bs-toolbar-main button{flex-shrink:0}.bs-root .bs-reader-tabs{top:0}.bs-root .bs-study-tabs{padding-top:6px}
+.bs-toolbar-main .ui-icon{width:20px;height:20px;vertical-align:middle}.bs-icon-previous{transform:rotate(180deg)}
+.bs-root .bs-word:focus-visible{outline:2px solid #7094cf;outline-offset:2px}
+.bs-root .bs-scripture{line-height:1.65}.bs-root .bs-scripture h2{font-size:1.65em}.bs-root .bs-kicker{display:none}
+.bs-root .bs-chapter-heading{font-size:.85em;margin:4px 0 15px}.bs-root .bs-scripture h2{margin-top:0}
+.bs-root .bs-verse-number{display:inline;min-height:0;border:0;background:transparent;padding:0 6px 0 0;border-radius:3px;font:700 .75em/1.6 Arial,sans-serif;color:var(--bs-accent);vertical-align:super}
+.bs-root .bs-word{user-select:text;-webkit-user-select:text;touch-action:pan-y pinch-zoom}
+.bs-verse-text{user-select:text;-webkit-user-select:text}.bs-verse-text ::selection{background:#bcd5f5}
+.bs-root[data-margins=hidden] .bs-chain-margin{display:none}.bs-root[data-margins=hidden] .bs-verse-row{grid-template-columns:minmax(0,1fr)}
+.bs-root .bs-verse-mark{display:inline;padding:0 3px;min-height:0;border:0;background:transparent;font:14px/1.5 Arial,sans-serif;vertical-align:super;color:var(--bs-accent)}
+.bs-verse-text mark{color:inherit;border-radius:2px;padding:0;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.bs-verse-text .bs-underline{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.bs-settings-dialog{width:min(94vw,480px)}.bs-settings-content{display:grid;gap:12px;padding-top:16px;font-size:14px}
+.bs-settings-content fieldset{min-width:0;margin:0;padding:12px;border:1px solid var(--bs-line);border-radius:9px}
+.bs-settings-content legend{font-weight:700;padding:0 5px}.bs-settings-content a{display:block;color:var(--bs-accent);padding:8px 0}
+.bs-setting-check{display:flex;align-items:center;gap:10px;line-height:1.5}.bs-setting-check input{width:20px;height:20px}
+.bs-settings-content input[type=range]{width:100%;accent-color:var(--bs-accent)}
+.bs-settings-dialog .bs-modes{flex-direction:column}.bs-settings-dialog .bs-modes button{text-align:left}
+.bs-selection-toolbar{--bs-tool-ink:#276678;--bs-tool-hover:#e5edf4;position:fixed;left:50%;bottom:max(8px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:40020;width:480px;max-width:calc(100vw - 12px);display:grid;gap:3px;padding:4px 8px 6px;background:#f5f8fe;color:#30373d;border:1px solid #dce4ed;border-radius:16px;box-shadow:0 4px 22px #18243130;font:400 13px/1.2 Arial,Helvetica,sans-serif}
+.bs-selection-toolbar #bsSelectionReference{display:block;min-width:0;padding:0 22px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;font:400 11px/14px Arial,Helvetica,sans-serif;color:inherit}
+.bs-root .bs-selection-toolbar button{border:0;background:transparent;color:inherit;font:inherit;padding:4px;min-width:0;border-radius:7px}
+.bs-selection-colors{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:center;justify-items:center;gap:3px}
+.bs-root .bs-selection-colors button{width:34px;height:34px;min-height:34px;padding:0}
+.bs-root .bs-selection-colors button[data-selection-action=highlight]{width:32px;height:32px;min-height:32px;border-radius:50%;background:var(--bs-swatch);box-shadow:inset 0 0 0 1px #00000004}
+.bs-root .bs-selection-colors button[data-selection-action=underline]{background:#e6e9ee;font-size:23px;text-decoration:underline;text-underline-offset:3px;color:#454b50}
+.bs-selection-actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) repeat(2,minmax(0,1fr));align-items:start;gap:4px}
+.bs-root .bs-selection-actions button{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:2px;width:100%;min-height:42px;padding:2px;line-height:14px;white-space:normal}
+.bs-selection-actions button>.ui-icon,.bs-selection-actions button>img{display:block;flex-shrink:0;width:21px;height:21px;margin:0;color:var(--bs-tool-ink)}
+.bs-selection-actions button[data-selection-action=sermon-notes]>span{font-size:11px;line-height:11px}
+.bs-sermon-notes-actions{display:flex;flex-direction:column;align-items:center;gap:1px;min-width:0;border-radius:8px;background:#e8f1f8}
+.bs-root .bs-sermon-notes-actions .bs-current-notes{display:flex;align-items:center;justify-content:center;gap:3px;margin:0;padding:0 2px 2px;font:400 10px/14px Arial,Helvetica,sans-serif;color:var(--bs-tool-ink);white-space:nowrap;cursor:pointer}
+.bs-root .bs-sermon-notes-actions .bs-current-notes input{width:13px;height:13px;margin:0;accent-color:var(--bs-tool-ink)}
+.bs-root .bs-selection-toolbar #bsDismissSelection{position:absolute;top:3px;right:4px;min-height:22px;width:22px;padding:0;font-size:18px;line-height:22px}
+.bs-root .bs-selection-actions button:hover,.bs-root .bs-selection-toolbar #bsDismissSelection:hover{background:var(--bs-tool-hover)}
+.bs-root .bs-selection-colors button:hover{outline:2px solid var(--bs-tool-ink);outline-offset:2px}
+.bs-root[data-theme=dark] .bs-selection-toolbar{--bs-tool-ink:#a8d6e6;--bs-tool-hover:#394956;background:#29343f;color:#eff3f7;border-color:#495c6d}
+.bs-root[data-theme=dark] .bs-sermon-notes-actions{background:#314859}
+.bs-root[data-theme=dark] .bs-selection-actions button[data-selection-action=share]>img{filter:brightness(0) saturate(100%) invert(88%) sepia(17%) saturate(465%) hue-rotate(155deg)}
+.bs-root .bs-chain-margin button{width:100%;max-width:100%;min-width:0}
+.bs-toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);z-index:40030;max-width:90vw;padding:10px 16px;background:#302c25;color:white;border-radius:9px;font-size:13px;text-align:center;pointer-events:none}
+.bs-root textarea{width:100%;resize:vertical;padding:12px;border:1px solid var(--bs-line);border-radius:8px;background:var(--bs-paper);color:var(--bs-ink);font:16px/1.6 Arial,sans-serif}
+.bs-saved-items{padding-top:12px;max-height:58dvh;overflow:auto}.bs-saved-item{padding:12px 0;border-bottom:1px solid var(--bs-line)}
+.bs-saved-item p{white-space:pre-wrap;font:15px/1.6 Georgia,serif}.bs-saved-item div{display:flex;gap:7px;flex-wrap:wrap}.bs-jump-target{outline:2px solid var(--bs-accent);outline-offset:5px}
+@media(max-width:700px){
+ .bible-study-page .app-header{padding:6px 9px}.bible-study-page .header-left{min-height:44px}.bible-study-page .logo-wrap{width:34px;height:34px;flex-shrink:0}
+ .bible-study-page .menu-toggle{margin-right:8px}.bible-study-page .app-title{font-size:15px;gap:8px}.app-section-title{font-size:12px;padding-left:8px}
+ .bs-root .bs-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,calc((100% - 16px)*var(--bs-split)/100)) 16px minmax(0,1fr)}
+ .bs-root .bs-toolbar{display:block;padding:6px 8px}.bs-toolbar-main{display:grid;grid-template-columns:minmax(0,1fr) repeat(6,32px);gap:4px}
+ .bs-root .bs-toolbar-main button{min-width:0;min-height:36px;padding:5px 3px;font-size:12px}.bs-root .bs-toolbar-main #bsNavigate{min-width:0;padding-left:7px}
+ .bs-toolbar-secondary{margin-top:5px;gap:6px}.bs-root .bs-toolbar-secondary select{min-height:30px;padding:3px 6px;font-size:12px}.bs-translation{font-size:10px;padding:2px}
+ .bs-root .bs-study-tabs button{padding:9px 5px;min-height:35px;font-size:11px}.bs-root .bs-study-tabs{padding-top:4px}
+ .bs-root .bs-scripture{padding:14px 13px 28px}.bs-root .bs-verse-row{grid-template-columns:minmax(0,1fr) 62px;gap:9px}.bs-root .bs-chain-margin{font-size:10px}
+ .bs-root .bs-study-header.bs-banner{min-height:72px;padding:10px 16px;margin-top:4px}.bs-root .bs-study-content{padding:12px 14px 44px}
+ .bs-root .bs-search-form{margin-bottom:14px}.bs-search-form input{font-size:16px}.bs-root .bs-divider span{width:42px;height:4px}
+ .bs-root .bs-entry{padding:11px;margin:10px 0}.bs-root .bs-study-content h3{font-size:20px}
+ .bs-selection-toolbar{width:min(480px,calc(100vw - 12px))}
+ .bs-settings-dialog select{font-size:16px}.bs-root .bs-settings-dialog{width:100%;max-width:none;max-height:86dvh;overflow:auto}
+}
+/* Tabs retain their own dimensions when the split divider moves. */
+.bs-root .bs-study-tabs{height:44px;min-height:44px;align-items:stretch;overflow-x:auto;overflow-y:hidden;flex-shrink:0}
+.bs-root .bs-study-tabs button,.bs-root .bs-study>.bs-study-tabs button{flex:0 0 132px;width:132px;min-width:132px;max-width:132px;height:38px;min-height:38px;padding:10px 8px}
+@media(max-width:700px){
+ .bs-root .bs-study-tabs{height:39px;min-height:39px}
+ .bs-root .bs-study-tabs button,.bs-root .bs-study>.bs-study-tabs button{flex-basis:94px;width:94px;min-width:94px;max-width:94px;height:35px;min-height:35px;padding:9px 4px}
+}
+/* Keep the complete toolbar inside the visible app shell, including Safari's
+   first layout and restored pages. Only the two reading panes scroll. */
+html:has(>body.bible-study-page){height:100%;overflow:hidden}
+body.bible-study-page{position:fixed;inset:0;margin:0;min-height:0;height:var(--bs-viewport-height,100dvh);display:flex;flex-direction:column;overflow:hidden}
+.bible-study-page>.app-header{position:relative;top:auto;flex:0 0 auto}
+.bible-study-page>.app-main,.district-glass.bible-study-page>.app-main{display:flex;flex:1 1 0;flex-direction:column;min-width:0;min-height:0;overflow:hidden;padding:0;margin:0;width:100%;max-width:none}
+.bible-study-page .bs-root,.bible-study-page .bs-root.bs-fullscreen{flex:1 1 0;height:100%;min-height:0}
+.bs-root .bs-toolbar{flex:0 0 auto;align-self:stretch;isolation:isolate}
+.bs-wide-tabs{display:grid;grid-template-columns:minmax(336px,1fr) 128px minmax(550px,1fr);flex:0 0 44px;min-height:44px;background:var(--bs-line);overflow-x:auto;overflow-y:hidden}
+.bs-wide-tabs>.bs-study-tabs{position:static;overflow:visible;flex:0 0 auto}
+.bs-wide-tabs>.bs-reader-tabs{grid-column:1;justify-self:start}.bs-wide-tabs>[aria-label="Study tools"]{grid-column:3;justify-self:end}
+.bs-wide-tabs>.bs-layout-control{grid-column:2;display:flex;justify-content:center;align-items:center;margin:0;padding:3px 5px;min-width:0}
+.bs-root .bs-layout-control #bsLayoutMode{width:118px;max-width:100%;min-width:0;font-size:12px;min-height:34px;padding:5px}
+.bs-root:not([data-mode=split]) .bs-wide-tabs{display:flex;justify-content:space-between}
+.bs-root:not([data-mode=split]) .bs-wide-tabs>.bs-study-tabs{flex:0 1 auto;min-width:0;overflow-x:auto}
+.bs-wide-tabs>.bs-layout-control{flex:0 0 128px}
+.bs-root .bs-wide-tabs button{flex:0 0 104px;width:104px;min-width:104px;max-width:104px;white-space:normal;padding:5px 8px}
+@media(min-width:701px) and (any-pointer:coarse){
+ /* Anchor tablet tabs to two fixed halves, independently of the pane divider. */
+ .bs-wide-tabs{display:grid;grid-template-columns:minmax(0,1fr) 128px minmax(0,1fr);gap:0;overflow:hidden;padding:0 1px}
+ .bs-wide-tabs>.bs-reader-tabs{grid-column:1;min-width:0;overflow-x:auto;gap:2px;padding-left:4px;padding-right:4px}
+ .bs-root .bs-wide-tabs button{flex-basis:88px;width:88px;min-width:88px;max-width:88px;padding-left:4px;padding-right:4px}
+ .bs-wide-tabs>.bs-study-tabs:not(.bs-reader-tabs){grid-column:3;display:grid;grid-template-columns:repeat(5,minmax(64px,1fr));justify-self:end;width:100%;max-width:444px;min-width:0;gap:0;padding:4px 2px 0;overflow-x:auto;scrollbar-width:thin}
+ .bs-root .bs-wide-tabs>.bs-study-tabs:not(.bs-reader-tabs) button{flex:none;width:100%;min-width:0;max-width:none;padding:4px 2px;font-size:11px;line-height:13px}
+ .bs-root:not([data-mode=split]) .bs-wide-tabs>.bs-study-tabs{min-width:0;overflow-x:auto}
+}
+.bs-root[data-mode=bible] .bs-wide-tabs>[aria-label="Study tools"],.bs-root[data-mode=study] .bs-wide-tabs>.bs-reader-tabs{display:none}
+.bs-root[data-compact-reader=true] .bs-scripture{padding-left:14px;padding-right:14px}
+.bs-root[data-compact-reader=true] .bs-verse-row{grid-template-columns:minmax(0,50%) 44px 30px 30px minmax(0,1fr);gap:4px}
+.bs-root[data-compact-reader=true] .bs-chain-margin{display:flex;flex-wrap:wrap;gap:5px 10px;border-left:0;border-top:1px solid var(--bs-line);padding:4px 0 0;font-size:10px}
+.bs-root[data-compact-reader=true] .bs-chain-margin button{width:auto;max-width:100%;margin:0}
+.bs-root[data-compact-reader=true] .bs-chain-key{display:inline;margin-right:4px}
+.bs-root[data-compact-reader=true] .bs-chain-name{display:inline}
+@media(max-width:700px){
+ .bs-wide-tabs,.bs-root:not([data-mode=split]) .bs-wide-tabs{display:grid;grid-template-columns:minmax(0,1fr) 112px;flex-basis:40px;min-height:40px;overflow:hidden}
+ .bs-root .bs-wide-tabs>.bs-reader-tabs{display:grid;grid-template-columns:.7fr 1fr 1.2fr;justify-self:stretch;gap:0;width:100%;min-width:0;height:40px;min-height:40px;padding:4px 0 0;overflow:hidden}
+ .bs-root .bs-wide-tabs>.bs-reader-tabs button{flex:none;width:100%;min-width:0;max-width:none;height:36px;min-height:36px;padding:4px 2px;font-size:11px;white-space:nowrap}
+ .bs-wide-tabs>.bs-layout-control{padding:2px 4px}
+ .bs-root .bs-layout-control #bsLayoutMode{width:104px;min-height:32px;padding:4px 2px;font-size:11px}
+ .bs-root .bs-reader-tabs button{flex-basis:94px;width:94px;min-width:94px;max-width:94px}
+ .bs-root .bs-study>.bs-study-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;width:100%;height:44px;min-height:44px;padding:4px 4px 0;overflow:hidden}
+ .bs-root .bs-study>.bs-study-tabs button{flex:none;width:100%;min-width:0;max-width:none;height:40px;min-height:40px;padding:4px 2px;font-size:11px;line-height:13px;white-space:normal;text-wrap:balance}
+ .bs-mobile-tab-line{display:block}
+}
+@media(max-width:360px){.bs-root .bs-study>.bs-study-tabs{gap:1px;padding-left:2px;padding-right:2px}.bs-root .bs-study>.bs-study-tabs button{font-size:10px;padding-left:1px;padding-right:1px}}
+
+#bsTranslation{width:140px;max-width:100%;min-width:0;flex-shrink:0}.bs-verse-text{white-space:pre-wrap}.bs-verse-footnotes{font:13px/1.6 Arial,sans-serif;color:var(--bs-muted);margin:0 0 14px}.bs-verse-footnotes summary{cursor:pointer}.bs-verse-footnotes p{white-space:pre-wrap}
+.bs-settings-edition{margin:0;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.bs-translation-control{display:flex;align-items:center;flex:0 0 auto}
+.bs-verse-body,.bs-chain-margin{min-width:0;overflow-wrap:anywhere}
+.bs-root .bs-verse-row>.bs-verse-body{grid-column:1;grid-row:1}
+.bs-root .bs-verse-row>.bs-chain-margin{grid-column:2;grid-row:1;max-width:100%}
+.bs-root[data-compact-reader=true] .bs-verse-row>.bs-chain-margin{grid-column:1;grid-row:2}
+.bs-dictionary,.bs-translations{border:1px solid var(--bs-line);border-radius:10px;padding:14px;margin:16px 0}
+/* Source colors stay inside Word Study, including English equivalent results. */
+#bsWordPanel .bs-dictionary[data-dictionary-source=harper]{--bs-source-fill:#eaf6fd;--bs-source-edge:#a9cfe5}
+#bsWordPanel .bs-dictionary[data-dictionary-source=vine]{--bs-source-fill:#ebf8ef;--bs-source-edge:#afd5bc}
+#bsWordPanel .bs-dictionary[data-dictionary-source=mounce]{--bs-source-fill:#fcecf3;--bs-source-edge:#e3b7ca}
+.bs-root[data-theme=dark] #bsWordPanel .bs-dictionary[data-dictionary-source=harper]{--bs-source-fill:#243c4a;--bs-source-edge:#537f98}
+.bs-root[data-theme=dark] #bsWordPanel .bs-dictionary[data-dictionary-source=vine]{--bs-source-fill:#293e35;--bs-source-edge:#5d8b71}
+.bs-root[data-theme=dark] #bsWordPanel .bs-dictionary[data-dictionary-source=mounce]{--bs-source-fill:#46303e;--bs-source-edge:#a06c87}
+#bsWordPanel .bs-dictionary[data-dictionary-source]{background:var(--bs-source-fill,var(--bs-panel));border-color:var(--bs-source-edge,var(--bs-line))}
+#bsWordPanel .bs-dictionary[data-dictionary-source]>.bs-source-toggle{background:transparent;border-color:var(--bs-source-edge,var(--bs-line))}
+.bs-translations{border:0;border-radius:0;padding:0;margin:6px 0;font-size:15px}
+.bs-word-type{display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;margin:8px 0 14px;max-width:100%}
+.bs-word-type label{display:flex;align-items:center;gap:6px;max-width:100%;font:14px/1.5 Arial,sans-serif}
+.bs-root .bs-word-type select{max-width:100%;min-width:0;min-height:40px}
+.bs-word-type .bs-attribution{overflow-wrap:anywhere}
+.bs-other-definitions,.bs-related-articles{border-top:1px solid var(--bs-line);padding:10px 0;margin-top:8px}
+.bs-other-definitions>summary,.bs-related-articles>summary{cursor:pointer;line-height:1.5;min-height:32px}
+.bs-grammar-note{font:14px/1.7 Arial,sans-serif}
+.bs-root button.bs-dictionary-ref{display:inline;min-height:0;padding:0;border:0;border-radius:0;background:none;color:var(--bs-accent);text-decoration:underline;text-underline-offset:3px;font:inherit;white-space:normal}
+#bsDictionaryDialog{width:min(94vw,780px)}
+#bsDictionaryContent{font:16px/1.8 Georgia,serif;overflow-wrap:anywhere}
+#bsDictionaryContent article+article{border-top:1px solid var(--bs-line);margin-top:16px;padding-top:16px}
+.bs-native-notice{font:13px/1.7 Arial,sans-serif;margin:12px 0}
+.bs-native-entry{border-top:1px solid var(--bs-line);margin:14px 0;padding-bottom:12px}
+.bs-native-equivalents,.bs-native-spellings{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.bs-native-equivalents>p{flex-basis:100%;margin:0}
+.bs-native-spelling{flex:1 1 160px;min-width:0;max-width:260px;overflow-wrap:anywhere}
+.bs-native-spelling p{margin:5px 0}
+.bs-root .bs-english-equivalent[aria-pressed=true]{background:var(--bs-line);font-weight:bold}
+.bs-native-english{margin-top:24px;border-top:2px solid var(--bs-line);padding-top:16px;min-width:0}
+.bs-expository>.bs-dictionary-title{font:700 1.29em/1.35 Georgia,'Times New Roman',serif;margin:.5em 0 .7em}
+.bs-expository .bs-source-content,#bsDictionaryContent .bs-expository{font:17px/1.7 Georgia,'Times New Roman',serif;overflow-wrap:anywhere}
+.bs-expository .bs-source-content p,#bsDictionaryContent .bs-expository p{margin:0 0 .65em;white-space:normal}
+.bs-expository .bs-attribution,#bsDictionaryContent .bs-expository .bs-attribution{font:11px/1.6 Arial,sans-serif;text-indent:0;margin:7px 0 14px}
+.bs-expository .bs-dictionary-testament{font:700 italic 1em/1.5 Georgia,serif;text-align:left;margin:1.1em 0 .45em;text-indent:0}
+.bs-expository .bs-dictionary-section{font:700 1em/1.5 Georgia,serif;margin:1em 0 .55em;text-indent:0}
+.bs-expository[data-dictionary-family=vine] .bs-dictionary-section,.bs-expository[data-dictionary-family=vine]>.bs-dictionary-title{text-align:center}
+.bs-expository[data-dictionary-family=vine]>.bs-dictionary-title{font-style:italic;margin:1em 0 .75em}
+.bs-root .bs-inline-glyph{width:auto;max-height:3em;max-width:100%;vertical-align:baseline;display:inline-block;margin:0}
+.bs-expository .bs-dictionary-numbered{margin-top:.7em}
+.bs-translation-choices{margin:0;line-height:2;overflow-wrap:anywhere}
+.bs-root .bs-translation-choice{display:inline;min-height:32px;padding:2px 3px;border:0;border-radius:3px;background:transparent;color:var(--bs-accent);font:inherit;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.bs-root .bs-translation-choice[aria-expanded=true]{font-weight:bold;background:var(--bs-panel)}
+.bs-translation-definition{position:relative;border-left:2px solid var(--bs-line);padding:12px 14px;margin:8px 0 14px;overflow-wrap:anywhere}
+.bs-translation-definition>h4{margin:0 60px 12px 0;font:700 19px/1.5 Georgia,serif}
+.bs-root .bs-translation-close{float:right;min-height:30px;padding:3px 7px;font-size:12px}
+.bs-definition{padding:14px 0;margin:0;white-space:normal;border:0;border-radius:0}
+.bs-definition+.bs-definition{border-top:1px solid var(--bs-line)}
+.bs-definition h4{margin:0 0 6px;font:700 17px/1.5 Georgia,serif}
+.bs-definition p{margin:7px 0}.bs-definition .bs-source-content{overflow-wrap:break-word}
+.bs-smallcaps{font-variant:small-caps}
+.bs-illustration .bs-source-image{display:inline-block;max-height:65vh;max-width:100%;height:auto;width:auto;margin:12px auto}
+.bs-source-table-wrap{overflow-x:auto;margin:14px 0}.bs-source-table{border-collapse:collapse;width:100%;font-size:.9em;white-space:normal}
+.bs-source-table td,.bs-source-table th{border:1px solid var(--bs-line);padding:8px;vertical-align:top;min-width:80px}
+.bs-source-table p{margin:0;white-space:normal}
+@media(max-width:700px){
+ .bs-toolbar-secondary .bs-translation{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .bs-toolbar-secondary #bsTranslation{width:84px;min-width:0}
+ .bs-toolbar-secondary #bsLayoutMode{flex:0 0 auto;max-width:145px}
+}
+.bs-sync-progress{margin:16px 0;padding:14px;border:1px solid var(--bs-line);border-radius:10px;background:var(--bs-paper)}
+.bs-sync-progress progress{display:block;width:100%;height:18px;accent-color:var(--bs-accent)}
+.bs-sync-progress p{margin:7px 0;overflow-wrap:anywhere}.bs-sync-progress [hidden]{display:none}
+
+/* Navigation belongs to the Bible tab and stays above its scrolling verses. */
+.bs-root #bsBibleNavigation{position:sticky;top:var(--bs-reader-tab-height,0px);z-index:2;padding:7px 8px;background:var(--bs-paper);box-shadow:0 4px 7px -6px #302c2560}
+#bsBibleNavigation .bs-toolbar-main{display:flex;flex-wrap:wrap;gap:5px;align-items:center;min-width:0}
+.bs-root #bsBibleNavigation button{min-height:36px;min-width:32px;padding:5px 7px;font-size:12px}
+.bs-root #bsBibleNavigation #bsNavigate{min-width:95px;max-width:180px;flex:1 1 95px;text-align:left}
+#bsBibleNavigation .bs-translation-control{flex:0 1 125px;min-width:95px}
+.bs-root #bsBibleNavigation #bsTranslation{width:100%;min-width:0;max-width:100%;min-height:36px;padding:5px;font-size:12px}
+@media(max-width:700px){.bs-root #bsBibleNavigation{padding:5px 7px}.bs-root #bsBibleNavigation button{padding:5px;min-width:30px}#bsBibleNavigation .bs-translation-control{flex-basis:100px}}
+
+/* Sermon notes use the same paper, type scale and independent pane scrolling. */
+@font-face{font-family:"Noto Sans";src:url("fonts/NotoSans-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans";src:url("fonts/NotoSans-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans";src:url("fonts/NotoSans-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Noto Sans";src:url("fonts/NotoSans-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+.bs-notes-panel{padding:16px;color:var(--bs-ink);font:15px/1.6 Arial,sans-serif;max-width:1000px;margin:auto}
+.bs-notes-actions,.bs-notes-meta-actions,.bs-notes-format,.bs-notes-source-actions{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:12px}
+.bs-notes-dock{position:sticky;top:var(--bs-reader-tab-height,0px);z-index:2;background:var(--bs-paper);padding:8px 0 6px;border-bottom:1px solid var(--bs-line);box-shadow:0 5px 8px -7px #302c2560}
+.bs-notes-actions{padding:0 0 8px;margin:0;border-bottom:0}
+.bs-root #bsNotesActionsToggle{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:38px;min-height:38px;padding:7px;flex-shrink:0}
+#bsNotesActionsToggle .ui-icon{width:20px;height:20px}
+.bs-root #bsNotesActionsMenu{position:fixed;inset:auto;margin:0;left:var(--bs-notes-options-left,8px);top:var(--bs-notes-options-top,100px);z-index:40025;display:block;width:min(220px,calc(100vw - 16px));max-width:calc(100vw - 16px);height:auto;min-height:0;max-height:min(320px,var(--bs-notes-options-height,75dvh));overflow:auto;overscroll-behavior:contain;padding:8px;border:1px solid var(--bs-line);border-radius:10px;background:var(--bs-paper);color:var(--bs-ink);box-shadow:0 8px 30px #18243140;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.bs-root #bsNotesActionsMenu[popover]:not(:popover-open){display:none}
+.bs-root #bsNotesActionsMenu button{display:block;width:100%;height:auto;min-height:44px;max-height:none;margin:0;text-align:left;padding:9px 12px;font:13px/1.4 Arial,sans-serif;white-space:normal}
+.bs-root #bsNotesActionsMenu button+button{margin-top:5px}
+.bs-notes-edit-controls{display:none;padding-top:6px;border-top:1px solid var(--bs-line)}
+.bs-notes-dock .bs-notes-meta-actions{display:none;margin:0}.bs-notes-dock .bs-notes-format{margin-bottom:0}
+.bs-notes-panel:has(#bsNotesWorkspace:not([hidden])) .bs-notes-meta-actions{display:flex}
+.bs-root .bs-notes-meta-actions button{background:#e6eef8;border-color:#a2b6d2;color:#294a70}
+.bs-root .bs-notes-meta-actions button:hover{background:#d7e5f6;border-color:#7797c1}
+.bs-root .bs-notes-meta-actions #bsNotesDelete{background:#f8e9e9;border-color:#d6aaaa;color:#963b40}
+/* Formatting opens automatically for a selected editor range. */
+.bs-root[data-notes-menu=selection] #bsNotesTools{position:relative;inset:auto;margin:0;transform:none;z-index:auto;display:grid;grid-template-columns:40px minmax(0,252px) 1fr 24px;align-items:center;gap:2px 4px;width:100%;max-width:none;max-height:none;overflow:visible;padding:3px 5px;border:0;border-radius:6px;box-shadow:none;font:400 12px/1.2 Arial,Helvetica,sans-serif}
+.bs-root .bs-notes-actions{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+.bs-root .bs-notes-actions .bs-notes-meta-actions{margin:0;gap:5px}
+.bs-root .bs-notes-edit-heading{display:flex;align-items:baseline;gap:7px;width:100%;min-height:26px;margin:1px 0;padding:2px 0;border:0;background:transparent;color:var(--bs-muted);text-align:left;font:400 12px/1.45 Arial,sans-serif;overflow-wrap:anywhere}
+.bs-notes-edit-heading>span:first-child{min-width:0}
+.bs-notes-pencil{flex-shrink:0;color:var(--bs-accent)}.bs-notes-pencil .ui-icon{width:13px;height:13px}
+body.bible-study-page.bs-ios-keyboard{top:var(--bs-viewport-offset-top,0px);bottom:auto}
+.bs-root[data-ios-viewport=true] .bs-search-form input{font-size:16px}
+@media(max-width:700px){.bs-root .bs-notes-actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) 30px;gap:3px}.bs-root .bs-notes-actions .bs-notes-meta-actions{display:none}.bs-root .bs-notes-panel:has(#bsNotesWorkspace:not([hidden])) .bs-notes-actions .bs-notes-meta-actions{display:contents}.bs-root .bs-notes-actions button{min-width:0;min-height:34px;padding:4px 2px;font-size:10px;line-height:12px;white-space:normal}.bs-root #bsNotesActionsToggle{grid-column:6;width:30px;min-height:34px;padding:5px}}
+.bs-notes-confirm-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.bs-root .bs-notes-delete-confirm{background:#a82f35;color:#fff;border-color:#a82f35}.bs-root .bs-notes-delete-confirm:hover{background:#8b242a}
+.bs-root .bs-notes-actions button,.bs-root .bs-notes-meta-actions button{font-size:12px;padding:6px 9px;min-height:36px}
+.bs-notes-status{font-size:12px;color:var(--bs-muted);overflow-wrap:anywhere}.bs-notes-heading{font:400 12px/1.45 Arial,sans-serif;color:var(--bs-muted);margin:10px 0}.bs-notes-heading p{margin:3px 0;font-weight:400;overflow-wrap:anywhere}
+.bs-notes-panel:has(#bsNotesLibrary:not([hidden])) #bsNotesStatus:not([data-error=true]){display:none}
+.bs-root .bs-notes-actions button[aria-current=page],.bs-root .bs-notes-views button[aria-pressed=true]{background:#236d70;border-color:#236d70;color:#fff;box-shadow:inset 0 -3px 0 #164c50;font-weight:600}
+.bs-notes-filters{display:grid;grid-template-columns:minmax(0,1fr);gap:9px;padding-top:14px}
+.bs-notes-views{display:flex;flex-wrap:wrap;gap:7px}.bs-root .bs-notes-views button{font-size:13px;min-height:36px;padding:6px 13px}
+.bs-root .bs-notes-selected-book{justify-self:start;background:#e1f0ef;border-color:#80aaa9;color:#194d50;padding:5px 10px;font-size:13px}
+#bsNotesBooksDialog #bsNotesAllBooks{margin:14px 0 6px}#bsNotesBooksDialog .bs-book-group button[aria-current=true]{outline-color:#236d70}
+.bs-notes-panel label,.bs-root #bsNotesMetaForm label{display:block;font-size:12px;font-weight:600}
+.bs-root .bs-notes-filters input,.bs-root .bs-notes-filters select,.bs-root #bsNotesMetaForm input,.bs-root #bsNotesTargetExisting{display:block;width:100%;padding:9px;border:1px solid var(--bs-line);border-radius:7px;background:var(--bs-paper);color:var(--bs-ink);font:16px/1.4 Arial,sans-serif;margin:5px 0 12px;box-sizing:border-box}
+.bs-root .bs-notes-list-item{display:block;width:100%;text-align:left;padding:13px;margin:8px 0;background:var(--bs-panel)}
+.bs-notes-list-item strong,.bs-notes-list-item span,.bs-notes-list-item small{display:block;overflow-wrap:anywhere}.bs-notes-list-item small{color:var(--bs-muted);font-size:11px}
+.bs-notes-format{border:1px solid var(--bs-line);padding:7px;border-radius:8px;background:var(--bs-panel)}.bs-root .bs-notes-format button{min-width:33px;padding:6px;font-size:12px}.bs-notes-format select{max-width:100%;font-size:13px}
+.bs-notes-format{display:block}.bs-notes-font-row{display:flex;flex-wrap:wrap;align-items:center;gap:5px}.bs-notes-font-row+.bs-notes-font-row{margin-top:6px;padding-top:6px;border-top:1px solid var(--bs-line)}
+.bs-root #bsNotesFont{width:150px;max-width:42%}.bs-root #bsNotesFontSize{width:54px;min-width:0;min-height:33px;padding:5px;border:1px solid var(--bs-line);border-radius:6px;background:var(--bs-paper);color:var(--bs-ink);font:13px Arial,sans-serif}
+.bs-root #bsNotesCase{width:100px;min-width:0}.bs-root .bs-notes-format input[type=color]{width:28px;height:30px;padding:2px;border:1px solid var(--bs-line);border-radius:5px;background:var(--bs-paper);cursor:pointer}.bs-notes-color-letter{border-bottom:3px solid #202124}
+.bs-notes-editor,.bs-notes-preview{min-height:320px;padding:20px 15px;background:var(--bs-paper);border:1px solid var(--bs-line);border-radius:9px;font:15px/1.65 Calibri,Arial,sans-serif;overflow-wrap:anywhere;white-space:pre-wrap;outline:none}
+.bs-notes-editor:focus{outline:2px solid #9c7a42;outline-offset:2px}.bs-notes-editor p{margin:0 0 10px;min-height:1em}
+::highlight(sermon-references){text-decoration:underline dotted #517e92}
+.bs-notes-editor.bs-notes-reference-hover{cursor:pointer}
+.bs-notes-editor [data-notes-type=main_point],.bs-notes-preview [data-notes-type=main_point],.bs-notes-editor [data-notes-type=heading]{font-weight:700;margin-top:20px}
+.bs-notes-editor [data-notes-type=subpoint],.bs-notes-preview [data-notes-type=subpoint]{padding-left:18pt;font-weight:700}
+.bs-notes-editor [data-notes-type=sub_subpoint],.bs-notes-preview [data-notes-type=sub_subpoint]{padding-left:36pt}
+.bs-notes-editor [data-notes-type=illustration],.bs-notes-preview [data-notes-type=illustration]{padding-left:18pt;border-left:3px solid #b29a70}
+.bs-notes-editor [data-notes-type=scripture],.bs-notes-preview [data-notes-type=scripture]{font-style:italic}
+.bs-notes-editor [data-notes-type=conclusion],.bs-notes-preview [data-notes-type=conclusion]{margin-top:18px;font-weight:700}
+.bs-notes-editor [data-page-break=true]{border-top:1px dashed var(--bs-line);margin-top:22px;padding-top:12px}
+.bs-notes-references{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:14px 0}.bs-notes-references small{color:var(--bs-muted)}
+.bs-notes-source-actions{padding:10px 0;border-top:1px solid var(--bs-line);margin:16px 0 0}.bs-root .bs-current-notes{display:inline-flex;align-items:center;gap:5px;font:12px/1.4 Arial,sans-serif;color:var(--bs-ink)}.bs-current-notes input{width:17px;height:17px;margin:0}
+.bs-notes-conflict{background:#fff0ce;color:#654200;border:1px solid #c8a766;padding:12px;border-radius:8px;margin:12px 0}.bs-notes-conflict button{margin:8px 5px 0 0}
+#bsNotesJob progress{width:100%}#bsNotesJobErrors{font-size:12px;max-height:150px;overflow:auto;overflow-wrap:anywhere}
+.bs-root .bs-notes-panel [hidden],.bs-root .bs-notes-format[hidden]{display:none!important}
+@media(max-width:700px){.bs-notes-panel{padding:10px}.bs-notes-editor,.bs-notes-preview{padding:14px 10px;font-size:16px}.bs-notes-actions{gap:4px}.bs-root .bs-notes-actions button{font-size:11px;padding:6px}.bs-root .bs-reader-tabs button{flex:1 0 94px}}
+/* Compact touch controls keep the document visible behind a three-row menu. */
+.bs-root[data-notes-menu=selection] .bs-notes-panel{padding:2px 8px 8px}
+.bs-root[data-notes-menu=selection] .bs-notes-dock{padding:2px 0 3px}
+.bs-root[data-notes-menu=selection] .bs-notes-actions{padding:0;gap:4px;flex-wrap:nowrap}
+.bs-root[data-notes-menu=selection] .bs-notes-status{margin:6px 0}
+.bs-root[data-notes-menu=selection] .bs-notes-heading{margin:6px 0}
+.bs-root[data-notes-menu=selection] .bs-notes-format{padding:5px}
+.bs-root[data-notes-menu=selection] .bs-notes-meta-actions{gap:4px}
+.bs-root[data-notes-menu=selection] .bs-notes-meta-actions button{padding:5px 7px;font-size:11px}
+.bs-root[data-notes-menu=selection] .bs-notes-font-row{gap:3px}
+.bs-root[data-notes-menu=selection] .bs-notes-font-row:first-child{display:grid;grid-template-columns:minmax(0,50%) 44px 30px 30px minmax(0,1fr);gap:4px}
+.bs-root[data-notes-menu=selection] .bs-notes-font-row+.bs-notes-font-row{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;margin-top:5px;padding-top:5px}
+.bs-root[data-notes-menu=selection] .bs-notes-format button{flex:0 0 auto;min-width:28px;min-height:34px;padding:4px;font-size:11px}
+.bs-root[data-notes-menu=selection] #bsNotesFont,.bs-root[data-notes-menu=selection] #bsNotesCase{width:100%;max-width:100%;min-width:0;min-height:34px;padding:4px;font-size:13px}
+.bs-root[data-notes-menu=selection] #bsNotesFontSize{width:100%;min-height:34px;padding:4px;font-size:16px;appearance:textfield;-moz-appearance:textfield}
+.bs-root[data-notes-menu=selection] #bsNotesFontSize::-webkit-inner-spin-button,.bs-root[data-notes-menu=selection] #bsNotesFontSize::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.bs-root[data-notes-menu=selection] .bs-notes-format input[type=color]{flex:0 0 24px;width:24px;height:32px;padding:2px}
+.bs-root[data-notes-menu=selection] .bs-notes-clear-long{display:none}
+
+/* Selection controls replace the normal actions in the sticky sermon dock. */
+.bs-root #bsNotesTools .bs-notes-selection-reference{display:none}
+.bs-root #bsNotesTools .bs-selection-colors{grid-column:2;grid-row:1;gap:2px;order:0}
+.bs-root #bsNotesTools .bs-selection-colors button{width:30px;height:30px;min-height:30px;padding:0}
+.bs-root #bsNotesTools .bs-selection-colors button[data-notes-selection-command=hiliteColor]{width:28px;height:28px;min-height:28px;border-radius:50%;background:var(--bs-swatch);box-shadow:inset 0 0 0 1px #00000008}
+.bs-root #bsNotesTools .bs-selection-colors button[data-notes-selection-command=underline]{background:#e6e9ee;font-size:21px;text-decoration:underline;text-underline-offset:3px;color:#454b50}
+.bs-root #bsNotesTools .bs-notes-selection-actions{grid-column:1;grid-row:1;display:block;order:0}
+.bs-root #bsNotesTools .bs-notes-selection-actions button{min-height:34px;padding:0;gap:0;font-size:10px;line-height:12px}
+.bs-root #bsNotesTools .bs-notes-selection-actions .ui-icon{width:18px;height:18px}
+.bs-root #bsNotesDismissSelection{position:static;grid-column:4;grid-row:1;width:24px;min-height:30px;padding:0;font-size:20px;line-height:24px}
+.bs-root #bsNotesTools .bs-notes-more-formatting{grid-column:1/-1;min-width:0}
+.bs-root #bsNotesTools .bs-notes-more-formatting>summary{width:max-content;margin:0;padding:2px 4px;cursor:pointer;font:400 11px/14px Arial,Helvetica,sans-serif}
+.bs-root #bsNotesTools .bs-notes-format{margin-top:3px;padding:4px 0 0;border:0;border-top:1px solid #dce4ed;border-radius:0;background:transparent}
+.bs-root #bsNotesTools .bs-notes-format button,.bs-root #bsNotesTools .bs-notes-format select,.bs-root #bsNotesTools .bs-notes-format input{color:inherit}
+@media(max-width:400px){.bs-root[data-notes-menu=selection] #bsNotesTools{grid-template-columns:36px minmax(0,1fr) 22px;gap:2px;padding:3px}.bs-root #bsNotesDismissSelection{grid-column:3;width:22px}.bs-root #bsNotesTools .bs-selection-colors{gap:0}.bs-root #bsNotesTools .bs-selection-colors button{width:26px;height:28px;min-height:28px}.bs-root #bsNotesTools .bs-selection-colors button[data-notes-selection-command=hiliteColor]{width:24px;height:24px;min-height:24px}}
+
+.bs-root #bsNotesTools #bsNotesFontSize{flex:0 0 44px;width:44px}
+.bs-root #bsNotesTools #bsNotesCase{flex:0 0 70px;width:70px}
+
+@media(max-width:480px){.bs-root[data-notes-menu=selection] .bs-notes-font-row:first-child{grid-template-columns:minmax(0,50%) 42px 28px 28px minmax(0,1fr);gap:3px}}

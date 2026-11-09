@@ -1,0 +1,7 @@
+# Desktop preparation/preview only. Android uses Flask, requests and native PDF.
+Flask==3.1.2
+requests==2.32.5
+reportlab==4.4.4
+Pillow==11.0.0
+fonttools==4.60.1
+playwright==1.63.0

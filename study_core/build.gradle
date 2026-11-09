@@ -1,0 +1,2 @@
+plugins { id 'com.android.asset-pack' }
+assetPack { packName = 'study_core'; dynamicDelivery { deliveryType = 'install-time' } }

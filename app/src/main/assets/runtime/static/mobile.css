@@ -1,0 +1,231 @@
+@font-face{font-family:Lora;src:url("fonts/Lora-Variable.ttf") format("truetype");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:Lora;src:url("fonts/Lora-Italic-Variable.ttf") format("truetype");font-weight:400 700;font-style:italic;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url("fonts/SpaceGrotesk-Variable.ttf") format("truetype");font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:Rye;src:url("fonts/Rye-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Bitter;src:url("fonts/Bitter-Variable.ttf") format("truetype");font-weight:100 900;font-display:swap}
+:root{color-scheme:light;--app-ui:"Space Grotesk","Noto Sans",sans-serif;--app-reading:Lora,"Noto Sans",serif;--app-tab:Bitter,Georgia,serif;--app-sign:Rye,Georgia,serif;--app-ink:#192d4f;--app-muted:#607189}
+.app-no-chrome{font-family:var(--app-ui);-webkit-font-smoothing:antialiased}
+body [hidden]{display:none!important}
+.app-no-chrome :is(button,input,select,textarea){font-family:var(--app-ui)!important}
+.app-no-chrome :is(button,a,input,select):focus-visible{outline:3px solid #687fc2;outline-offset:3px}
+.app-no-chrome.bible-study-page>.app-main{padding:0;margin:0}
+.app-no-chrome.bible-study-page .bs-root{height:var(--bs-workspace-height,100dvh);font-family:var(--app-ui)}
+.app-no-chrome .bs-scripture{font-family:var(--app-reading);font-weight:400;line-height:1.85}
+.app-no-chrome .bs-scripture .bs-word{font-family:inherit!important}
+.app-no-chrome .bs-source-content:not(.bs-notes-preview){font-family:var(--app-reading);line-height:1.8}
+.app-no-chrome :is(.bs-book-title,.bs-chapter-heading,#bsBookHeading,.bs-handwritten){font-family:var(--app-reading)}
+.app-no-chrome .bs-handwritten{font-family:var(--app-reading)!important;font-style:italic;font-weight:500;letter-spacing:-.035em}
+.app-no-chrome :is(.bs-study-tabs button,.bs-dialog-head,.bs-notes-views button){letter-spacing:-.015em}
+.app-no-chrome .bs-settings-content legend{font-weight:600;letter-spacing:.025em}
+.app-no-chrome #mobileSignOut{width:100%;min-height:44px;margin-top:5px;border:1px solid #d1b7b4;border-radius:9px;background:transparent;color:#953f46}
+.mobile-page{margin:0;min-height:100dvh;background:#f5f1e8;color:var(--app-ink)}
+.mobile-page .app-main{max-width:980px;margin:auto;padding:18px}
+.mobile-onboarding{max-width:620px;margin:24px auto 40px;padding:28px;background:#fffdfa;border:1px solid #e0d4bd;border-radius:20px;box-shadow:0 12px 36px #21375812}
+.mobile-onboarding h1{font:500 30px/1.2 var(--app-reading);letter-spacing:-.04em;margin:12px 0;color:#192c58}
+.mobile-onboarding h2{font-size:20px;margin-top:24px}
+.mobile-brand{width:80px;height:80px;object-fit:contain}
+.mobile-intro,.mobile-small{color:#5e6878;line-height:1.6}
+.mobile-small{font-size:12px}
+.mobile-agreement{max-height:300px;overflow-y:auto;padding:12px 16px;border:1px solid #ded7c7;border-radius:10px;font-size:14px;line-height:1.7;background:#fbfaf6}
+.mobile-storage-notice{margin:18px 0;padding:15px;border:1px solid #ceb16d;border-radius:12px;background:#fff6db;font-size:14px;line-height:1.6}
+.mobile-onboarding form>label{display:block;font-weight:600;margin:14px 0 7px}
+.mobile-onboarding input:not([type=checkbox]){display:block;box-sizing:border-box;width:100%;padding:12px;border:1px solid #b9c4d5;border-radius:9px;font-size:16px}
+.mobile-onboarding .mobile-check{display:flex;align-items:flex-start;gap:9px;font-size:14px;line-height:1.5;font-weight:400}
+.mobile-check input{width:20px;height:20px;flex:0 0 auto}
+.mobile-onboarding .btn-primary{display:block;width:100%;margin-top:18px;min-height:46px;border:1px solid #36657a;background:#1c4768;color:white;font-size:15px;font-weight:600;padding:12px;border-radius:10px}
+.mobile-onboarding button:disabled{opacity:.6}
+#mobileStatus[data-error=true]{color:#a02431;font-weight:500}
+#mobileStatus{line-height:1.5;overflow-wrap:anywhere}
+#setupBar{width:100%;height:18px;accent-color:#276d72}
+#setupProgress{margin-top:18px}
+.mobile-saved{max-width:800px;margin:12px auto}
+.mobile-saved h1{font:500 30px/1.3 var(--app-reading)}
+.mobile-saved-card{padding:16px;border:1px solid #d8cfbf;background:#fffdfa;border-radius:12px;margin:14px 0;overflow-wrap:anywhere}
+.mobile-saved-card h2{font-size:17px}
+.mobile-saved-card p{white-space:pre-wrap;line-height:1.7}
+.mobile-delete-mark{margin:10px;padding:8px;min-height:40px;border:1px solid #dab8b8;color:#9a3030;background:white;border-radius:8px}
+.mobile-saved a{color:#245987}
+/* Approved concept login: original emblem, lavender landscape and glass form. */
+.mobile-sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.mobile-login-page{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px 18px;background:#c9c9e8 url("artwork/login-landscape-v1.png") center/cover no-repeat fixed;color:#112747}
+.mobile-login-page>.app-main{width:100%;max-width:420px;margin:0;padding:0}
+.mobile-login-page .mobile-login-card{width:100%;padding:20px 22px;border:0;border-radius:0;background:transparent;box-shadow:none;text-align:center;backdrop-filter:none}
+.mobile-login-page .splash-logo{display:block;width:136px;height:142px;max-width:45vw;margin:0 auto 10px;object-fit:contain;filter:drop-shadow(0 4px 7px #293b5b30)}
+.mobile-login-page .splash-title{font:600 30px/1.02 var(--app-reading);text-transform:none;letter-spacing:-.045em;margin:0 0 24px;color:#112345;text-shadow:0 1px 12px #ffffffb8}
+.mobile-login-page .splash-title span{font-size:29px;font-weight:600}
+.mobile-login-form-card{max-width:360px;margin:0 auto;text-align:left;padding:18px 16px 14px;border:1px solid #ffffffb8;border-radius:17px;background:linear-gradient(135deg,#fbfcffa6,#e6e8ffa1);box-shadow:0 9px 30px #31446723,inset 0 1px 0 #ffffffb8;backdrop-filter:blur(14px)}
+.mobile-login-field{position:relative;margin-bottom:12px}
+.mobile-login-page .mobile-login-field input{display:block;box-sizing:border-box;width:100%;min-height:46px;padding:11px 42px 11px 42px;border:1px solid #adb6d5;border-radius:10px;background:#ffffffb8;color:#172c4f;font-size:16px;box-shadow:inset 0 1px 2px #35476308}
+.mobile-login-field input::placeholder{color:#26375c;opacity:1}
+.mobile-input-icon{position:absolute;left:13px;top:12px;display:flex;align-items:center;justify-content:center;width:20px;height:22px;color:#21345a;pointer-events:none}
+.mobile-input-icon .ui-icon{width:20px;height:20px}
+#mobileTogglePassword{position:absolute;right:4px;top:3px;display:flex;align-items:center;justify-content:center;width:40px;height:40px;min-height:40px;padding:8px;background:transparent;border:0;border-radius:7px;color:#26375c;cursor:pointer}
+.mobile-login-page button[type=submit]{width:100%;padding:11px;border:1px solid #086453;border-radius:10px;min-height:46px;background:linear-gradient(#078873,#006351);color:#fff;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 3px 9px #07594426,inset 0 1px 0 #ffffff30}
+.mobile-login-page button[type=submit]:disabled{opacity:.6;cursor:wait}
+.mobile-login-page #mobileStatus:empty{display:none}
+.mobile-login-page #mobileStatus{margin:0 0 12px;font-size:13px}
+.mobile-login-page .mobile-login-remember{display:flex;align-items:center;justify-content:center;gap:7px;margin:12px 0 0;font-size:12px;line-height:1.5;color:#273c58}
+.mobile-login-remember .ui-icon{width:16px;height:16px;flex:0 0 16px;background:#047761;color:#fff;stroke-width:2.4;padding:2px;border-radius:3px}
+.mobile-login-storage{display:flex;align-items:center;justify-content:center;gap:10px;width:fit-content;max-width:100%;margin:15px auto 0;padding:10px 17px;border:1px solid #ffffff8c;border-radius:12px;background:#e9edff96;box-shadow:0 4px 15px #273b6412;backdrop-filter:blur(10px)}
+.mobile-login-storage>.ui-icon{width:25px;height:25px;color:#2a4777}
+.mobile-login-storage p{margin:0;text-align:left;font-size:11px;line-height:1.6;color:#233855}
+.mobile-login-storage strong,.mobile-login-storage span{display:block}
+.mobile-login-storage strong{font-weight:600}
+.mobile-login-footer{margin:12px 0 0;font:500 11px/1.6 var(--app-ui);color:#19365b}
+.mobile-account-help{margin:12px auto 0;max-width:310px;font-size:11px;line-height:1.7;color:#2f4968;text-align:center;text-wrap:balance}
+/* Browser preview of the supplied native loading-screen artwork. */
+.mobile-splash-page{margin:0;background:#0a1f46;min-height:100dvh;color:#fff}
+.mobile-splash-page>.app-main{padding:0;margin:0;max-width:none}
+.mobile-launch{position:relative;display:grid;place-items:center;min-height:100dvh;height:100dvh;overflow:hidden;background:#0a1f46}
+.mobile-launch-art{width:100%;height:100%;object-fit:contain}
+.mobile-launch-actions{position:absolute;left:20px;right:20px;bottom:max(20px,env(safe-area-inset-bottom));display:flex;align-items:center;flex-direction:column;gap:14px}
+.mobile-launch-status{display:flex;align-items:center;justify-content:center;gap:9px;width:min(440px,100%);padding:12px 10px;margin:0;border:1px solid #c8dce02b;border-radius:12px;background:#102449cf;font-size:12px;letter-spacing:.02em;backdrop-filter:blur(10px)}
+.mobile-launch-status>span{width:5px;height:5px;border-radius:50%;background:#99d4d7;box-shadow:0 0 10px #99d4d7}
+#mobilePublisher{display:flex;align-items:center;gap:18px;min-height:50px;padding:12px 24px;border:1px solid #9ebdca;border-radius:24px;background:#fffbf0f2;color:#172e4e;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 5px 24px #06142c45}
+#mobilePublisher span{color:#53758b}
+@media(max-width:480px){.mobile-page .app-main{padding:10px}.mobile-onboarding{padding:18px;margin-top:10px}.mobile-onboarding h1{font-size:27px}.mobile-login-page{padding:20px 18px}.mobile-login-page .mobile-login-card{padding:25px 18px}.mobile-login-page .splash-title{font-size:25px}.mobile-login-page .splash-title span{font-size:34px}}
+@media(max-width:700px){
+ .app-no-chrome #bsBibleNavigation .bs-toolbar-main{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+ .app-no-chrome #bsBibleNavigation #bsNavigate{grid-column:1/4;width:100%;min-width:0;max-width:none;min-height:38px}
+ .app-no-chrome #bsBibleNavigation .bs-translation-control{grid-column:4/7;width:100%;min-width:0;max-width:none}
+ .app-no-chrome #bsBibleNavigation #bsTranslation{min-height:38px;font-size:13px}
+ .app-no-chrome #bsBibleNavigation button{width:100%;min-height:36px}
+}
+@media(max-height:640px){.mobile-login-page{align-items:flex-start;padding-top:12px;padding-bottom:12px}.mobile-login-page .splash-logo{width:94px;height:98px}.mobile-login-page .splash-title{margin-bottom:18px}.mobile-login-page .mobile-login-card{padding-top:10px}}
+/* Eight local illustrated wood scenes, one per tool, in a single sprite atlas. */
+.app-no-chrome #bsCommentaryControls{padding:3px 0}
+.app-no-chrome #bsCommentaryChoices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.app-no-chrome #bsCommentaryChoices button{height:30px;min-height:30px;padding:2px 4px;font-size:11px;line-height:12px;border-radius:6px;white-space:normal}
+.app-no-chrome #bsCommentaryThemes{padding:4px 5px;margin-top:3px}
+.bs-commentary-theme-heading{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:3px}
+.bs-commentary-theme-heading strong{font:500 10px/1.3 var(--app-ui);min-width:0}
+.bs-root #bsCommentaryViewAll{flex-shrink:0;min-height:26px;padding:3px 7px;border-color:#267479;color:#165e64;background:var(--bs-panel);font-size:10px;line-height:16px;border-radius:6px}
+.app-no-chrome .bs-root .bs-commentary-theme{flex:0 0 165px;height:32px;min-height:32px;padding:2px 6px;font-size:11px;line-height:12px;border-radius:6px}
+.app-no-chrome .bs-commentary-theme span{display:block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;line-height:13px}
+.app-no-chrome .bs-commentary-theme small{margin:0;line-height:11px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.bs-commentary-section-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:18px 0 8px;padding-top:10px;border-top:1px solid var(--bs-line)}
+.bs-commentary-section-nav span{font:500 12px/1.5 var(--app-ui);text-align:center}
+.bs-root .bs-commentary-section-nav button{min-height:32px;padding:5px 9px;font-size:12px}
+.bs-root #bsCommentaryNext{background:#176a70;border-color:#176a70;color:#fff}
+.bs-root .bs-commentary-sections-dialog{width:min(94vw,580px);max-height:80dvh;padding:18px;background:var(--bs-panel);color:var(--bs-ink);border:1px solid var(--bs-line);border-radius:16px;overflow-y:auto}
+.bs-commentary-sections-dialog .bs-dialog-head{padding:0 0 9px}
+.bs-commentary-sections-dialog::backdrop{background:#141d2e70}
+#bsCommentarySectionsTitle{font:600 22px/1.3 var(--app-reading)}
+#bsCommentarySectionsReference{margin:2px 0 14px;color:var(--bs-muted);font:400 13px/1.5 var(--app-ui)}
+.bs-commentary-sections-list{display:grid;gap:8px}
+.bs-root .bs-commentary-section-choice{display:flex;align-items:center;gap:10px;min-height:58px;padding:9px 10px;width:100%;text-align:left;white-space:normal;background:var(--bs-paper)}
+.bs-root .bs-commentary-section-choice[aria-pressed=true]{border-color:#267479;box-shadow:inset 3px 0 #267479}
+.bs-commentary-section-number{display:grid;place-items:center;flex:0 0 28px;height:30px;border-radius:5px;background:#d8b77c;color:#352713;font:600 16px/1 var(--app-ui)}
+.bs-commentary-section-label{flex:1;min-width:0;overflow-wrap:anywhere}
+.bs-commentary-section-label strong{display:block;font:600 16px/1.4 var(--app-reading)}
+.bs-commentary-section-label small{display:block;color:var(--bs-muted);font:400 12px/1.4 var(--app-ui)}
+.bs-commentary-section-check{flex:0 0 20px;color:#267479;font-size:23px}
+.bs-root[data-theme=dark] #bsCommentaryViewAll,.bs-root[data-theme=dark] .bs-commentary-section-check{color:#9bdde0}
+@media(max-width:700px){.bs-root .bs-commentary-sections-dialog{position:fixed;inset:auto 0 0;margin:0;width:100%;max-width:100%;max-height:78dvh;border-radius:18px 18px 0 0;padding:14px 16px max(16px,env(safe-area-inset-bottom));overscroll-behavior:contain}.bs-commentary-sections-dialog::before{content:'';display:block;width:36px;height:4px;border-radius:4px;background:var(--bs-line);margin:0 auto 10px}}
+.bs-loading-notice{margin:18px 0;padding:20px 16px;border:1px solid var(--bs-line);border-radius:12px;background:var(--bs-panel);text-align:center}
+.bs-loading-notice h3{margin:0 0 8px;font:600 18px/1.5 var(--app-tab);color:var(--bs-ink)}
+.bs-loading-notice p{margin:0 auto;max-width:420px;font:400 13px/1.7 var(--app-ui);color:var(--bs-muted)}
+.bs-loading-progress{display:block;width:min(290px,100%);height:6px;margin:16px auto 0;border:0;border-radius:99px;overflow:hidden;appearance:none;background:var(--bs-line);color:var(--bs-accent)}
+.bs-loading-progress:indeterminate{background:linear-gradient(90deg,var(--bs-line),var(--bs-accent),var(--bs-line));background-size:220% 100%;animation:bs-preparing 1.8s ease-in-out infinite}
+.bs-loading-progress::-webkit-progress-bar{background:transparent}
+.bs-loading-progress::-webkit-progress-value{background:var(--bs-accent)}
+.bs-loading-progress:indeterminate::-moz-progress-bar{background:transparent}
+.bs-loading-progress[hidden]{display:none}
+@keyframes bs-preparing{0%{background-position:100% 0}100%{background-position:-100% 0}}
+@media(prefers-reduced-motion:reduce){.bs-loading-progress:indeterminate{animation:none}}
+.app-no-chrome #bibleStudyRoot{--tool-art:url("artwork/study-wood-atlas-v1.png");--tool-y:0%}
+#bsReaderTab,#bsReaderPanel{--tool-y:0%}
+#bsBookStudyTab,#bsBookStudyPanel{--tool-y:14.285714%}
+#bsNotesTab,#bsNotesPanel{--tool-y:28.571429%}
+#bsWordTab,#bsWordPanel{--tool-y:42.857143%}
+#bsConcordanceTab,#bsConcordancePanel{--tool-y:57.142857%}
+#bsCommentaryTab,#bsCommentaryPanel{--tool-y:71.428571%}
+#bsSermonTab,#bsSermonPanel{--tool-y:85.714286%}
+#bsIllustrationsTab,#bsIllustrationsPanel{--tool-y:100%}
+.app-no-chrome #bibleStudyRoot .bs-wide-tabs{height:34px;min-height:34px;flex-basis:34px;background:#c7ad87;border-bottom:1px solid #9e7549;box-shadow:inset 0 1px 0 #f9e9d2}
+.app-no-chrome #bibleStudyRoot .bs-study-tabs{height:34px;min-height:34px;padding:2px 3px 0;gap:2px;background:#c7ad87;align-items:stretch}
+.app-no-chrome #bibleStudyRoot .bs-study-tabs button{height:31px;min-height:31px;padding:3px 5px;border:1px solid #ad8756;border-bottom:0;border-radius:6px 6px 0 0;background-color:#ead8b7;background-image:linear-gradient(#fff0d8dd,#f5dfbddb),var(--tool-art);background-size:100% 100%,300% 800%;background-position:center,right var(--tool-y);font-family:var(--app-tab)!important;font-size:11.5px;font-weight:600;line-height:12px;color:#402a18;letter-spacing:-.025em;text-shadow:0 1px #fff8;box-shadow:inset 0 1px 0 #fff8;white-space:normal}
+.app-no-chrome #bibleStudyRoot .bs-study-tabs button[aria-selected=true]{background-image:linear-gradient(#25170b69,#22150b85),var(--tool-art);border-color:#b68a49;color:#fff4d9;text-shadow:0 1px 2px #000;box-shadow:inset 0 2px 0 #e7be76,inset 0 -1px 0 #bd8d46}
+.app-no-chrome #bibleStudyRoot .bs-study-tabs button[aria-selected=true]::after{left:6px;right:6px;height:2px;bottom:0;background:#dcb576;border-radius:1px}
+.app-no-chrome #bibleStudyRoot .bs-layout-control{padding:2px 4px}
+.app-no-chrome #bibleStudyRoot #bsLayoutMode{min-height:28px;height:28px;padding:3px 5px;font-size:11px;border-radius:6px;background:#fff9eb;color:#493821;border-color:#b18d60}
+.app-no-chrome #bibleStudyRoot .bs-study-header.bs-banner{position:relative;isolation:isolate;overflow:hidden;min-height:54px;height:54px;margin:4px 7px 0;padding:9px 16px;justify-content:flex-start;border:1px solid #9c7544;border-radius:9px;background:#4d321e;box-shadow:inset 0 1px 0 #f0c88d50,0 2px 5px #49321c20}
+.app-no-chrome #bibleStudyRoot .bs-banner::before{content:'';display:block;inset:0;z-index:-2;background-image:var(--tool-art);background-size:100% 800%;background-position:right var(--tool-y);opacity:1;filter:saturate(.85)}
+.app-no-chrome #bibleStudyRoot .bs-banner::after{content:'';display:block;inset:0;z-index:-1;background:linear-gradient(90deg,#28180de8 0%,#382415a6 54%,#25190d05 100%);mask:none;-webkit-mask:none;opacity:1;mix-blend-mode:normal}
+.app-no-chrome #bibleStudyRoot .bs-banner h2{font-family:var(--app-sign)!important;font-size:clamp(19px,2.4vw,26px);font-weight:400;font-style:normal;line-height:1.2;letter-spacing:0;color:#fff0cc;text-align:left;text-shadow:0 2px 2px #160d05,0 -1px #f4d99f30}
+.app-no-chrome #bibleStudyRoot #bsBookHeading{margin:12px 0 0;padding:12px 17px;min-height:52px;border:1px solid #9c7544;border-radius:9px;background-color:#4d321e;background-image:linear-gradient(90deg,#28180de8 0%,#382415a6 54%,#25190d05 100%),var(--tool-art);background-size:100% 100%,100% 800%;background-position:center,right var(--tool-y);font:400 clamp(23px,2.6vw,31px)/1.15 var(--app-sign);color:#fff0cc;text-shadow:0 2px 2px #160d05;letter-spacing:0}
+.app-no-chrome #bibleStudyRoot .bs-chapter-heading{margin:8px 0 18px;font-size:.95em}
+.app-no-chrome #bibleStudyRoot .bs-notes-dock{padding:4px;border:1px solid #a37e4b;border-radius:9px;background-color:#5b3e27;background-image:linear-gradient(90deg,#27180b75,#38271820),var(--tool-art);background-size:100% 100%,100% 800%;background-position:center,right var(--tool-y);box-shadow:inset 0 1px 0 #f0d2a040}
+.app-no-chrome #bibleStudyRoot .bs-notes-actions{background:transparent}
+@media(max-width:700px){
+ .app-no-chrome #bibleStudyRoot .bs-wide-tabs>.bs-reader-tabs{height:34px;min-height:34px;padding-top:2px}
+ .app-no-chrome #bibleStudyRoot .bs-study>.bs-study-tabs{height:34px;min-height:34px;padding-top:2px}
+ .app-no-chrome #bibleStudyRoot .bs-study-tabs button{height:31px;min-height:31px;font-size:10.8px;padding:3px 2px;line-height:11.5px}
+ .app-no-chrome #bibleStudyRoot .bs-study-header.bs-banner{min-height:49px;height:49px;margin:4px 6px 0;padding:8px 13px}
+ .app-no-chrome #bibleStudyRoot .bs-banner h2{font-size:21px}
+ .mobile-login-page .mobile-login-card{padding:16px 15px}
+ .mobile-login-page .splash-title{font-size:29px;margin-bottom:22px}
+ .mobile-login-page .splash-title span{font-size:27px}
+}
+
+/* Website publisher support card; shown only after app startup is ready. */
+#mobileSupportDialog{--dev-mint:#39f5c5;--dev-line:rgba(57,245,197,.17);width:min(680px,calc(100vw - 28px));max-width:none;max-height:calc(100dvh - 28px);padding:0;border:0;border-radius:30px;background:transparent;color:#dffbf4;overflow:auto;overscroll-behavior:contain}
+#mobileSupportDialog::backdrop{background:rgba(0,8,7,.88);backdrop-filter:blur(13px)}
+#mobileSupportDialog *{box-sizing:border-box}
+  .dev-btn{
+    border:0;cursor:pointer;font-weight:500;border-radius:13px;padding:12px 20px;
+    transition:.25s;font-family:inherit;
+  }
+  .dev-support-shell{
+    width:min(680px,100%);position:relative;padding:1px;border-radius:30px;
+    background:linear-gradient(135deg,rgba(57,245,197,.9),rgba(57,245,197,.08) 32%,rgba(89,232,255,.45) 70%,rgba(57,245,197,.75));
+    box-shadow:0 0 80px rgba(57,245,197,.14),0 35px 110px rgba(0,0,0,.62);
+    animation:devPortalIn .65s cubic-bezier(.16,1,.3,1);
+  }
+  @keyframes devPortalIn{from{opacity:0;transform:translateY(28px) scale(.94)}to{opacity:1;transform:none}}
+  .dev-support-modal{
+    position:relative;overflow:hidden;border-radius:29px;padding:38px 40px;
+    background:linear-gradient(150deg,rgba(5,30,25,.99),rgba(2,14,12,.99));text-align:left;
+  }
+  .dev-support-modal:before{
+    content:"";position:absolute;inset:0;opacity:.22;
+    background-image:linear-gradient(rgba(57,245,197,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(57,245,197,.12) 1px,transparent 1px);
+    background-size:32px 32px;
+  }
+  .dev-support-content{position:relative;z-index:2}
+  .dev-support-top{display:flex;align-items:center;gap:18px;margin-bottom:20px}
+  .dev-support-icon{
+    width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:26px;color:#03110e;
+    background:linear-gradient(135deg,var(--dev-mint),#8affdf);box-shadow:0 0 30px rgba(57,245,197,.28);
+    animation:devPulse 2.2s ease-in-out infinite;flex:0 0 auto;
+  }
+  @keyframes devPulse{50%{box-shadow:0 0 50px rgba(57,245,197,.48);transform:scale(1.035)}}
+  .dev-support-label{font-size:10px;letter-spacing:.22em;color:var(--dev-mint);font-weight:700;text-transform:uppercase;margin-bottom:5px}
+  .dev-support-title{
+    font-family:"Brush Script MT","Segoe Script","Lucida Handwriting",cursive;
+    font-weight:400;font-size:clamp(34px,6vw,52px);line-height:1.05;margin:0;color:#effffb;
+    letter-spacing:.01em;
+  }
+  .dev-support-copy{color:#9ebbb3;line-height:1.7;margin:0 0 18px}
+  .dev-voluntary{display:inline-flex;align-items:center;gap:7px;color:#91b6ac;font-size:11px}
+  .dev-voluntary:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--dev-mint);box-shadow:0 0 10px var(--dev-mint)}
+  .dev-gcash-panel{
+    border:1px solid rgba(57,245,197,.2);background:linear-gradient(135deg,rgba(57,245,197,.075),rgba(255,255,255,.025));
+    border-radius:20px;padding:18px 22px;margin:20px 0;
+  }
+  .dev-gcash-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
+  .dev-gcash-logo{display:block;width:154px;max-width:50%;height:auto;object-fit:contain;filter:drop-shadow(0 0 2px rgba(255,255,255,.95)) drop-shadow(0 0 7px rgba(255,255,255,.45))}
+  .dev-secure-copy{color:#7fa79c;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+  .dev-gcash-number{font-size:clamp(27px,7vw,38px);font-weight:400;letter-spacing:.055em;color:#eafff9;margin:8px 0 4px}
+  .dev-gcash-name{color:var(--dev-mint);font-size:13px}
+  .dev-modal-actions{display:grid;grid-template-columns:1fr 1.2fr;gap:10px}
+  .dev-copy,.dev-proceed{font-weight:400}
+  .dev-copy{color:#dffaf3;background:rgba(255,255,255,.055);border:1px solid rgba(57,245,197,.16)}
+  .dev-proceed{color:#02110e;background:linear-gradient(135deg,var(--dev-mint),#71ffe2);box-shadow:0 12px 32px rgba(57,245,197,.18)}
+  .dev-note{font-size:12px;color:#75948c;line-height:1.55;margin:16px 0 0;text-align:center}
+
+
+#mobileSupportDialog .dev-modal-actions button{min-height:44px}
+#mobileSupportDialog .dev-gcash-number{user-select:text;-webkit-user-select:text}
+@media(max-width:700px){#mobileSupportDialog .dev-support-modal{padding:24px 22px}#mobileSupportDialog .dev-modal-actions{grid-template-columns:1fr}#mobileSupportDialog .dev-support-top{align-items:flex-start}#mobileSupportDialog .dev-gcash-number{font-size:27px}#mobileSupportDialog .dev-gcash-logo{width:134px;max-width:58%}}
+@media(prefers-reduced-motion:reduce){#mobileSupportDialog .dev-support-icon,#mobileSupportDialog .dev-support-shell{animation:none!important}}

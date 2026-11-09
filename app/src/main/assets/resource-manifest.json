@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "app_name": "IOWO D4 Bible Study",
+  "resource_version": "2026.11.08.1",
+  "files": [
+    {
+      "path": "study/bible_study.db",
+      "project_path": "study_core/src/main/assets/study/bible_study.db",
+      "bytes": 1081921536,
+      "sha256": "833ea02bb6516c093c771e24d277e1c1be96e48de6b4cc836703d6f06f008e49"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/exalting-04c8d666ca0a3fee2956f6d1f6ded2db11b147007138ea76e8cd3e3daebaecb3.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/exalting-04c8d666ca0a3fee2956f6d1f6ded2db11b147007138ea76e8cd3e3daebaecb3.sqlite",
+      "bytes": 15269888,
+      "sha256": "f82ba8e6ea07d50bb70498768019fae0cf0325ee6b1402cddd504a4d930a1f8c"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/moody-cf5b2c30881ea2dff67283b9e16f711f6cec8f01599bb5c1195af96b16318d8d.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/moody-cf5b2c30881ea2dff67283b9e16f711f6cec8f01599bb5c1195af96b16318d8d.sqlite",
+      "bytes": 10694656,
+      "sha256": "983fb41b6782a487851975ff5354cb9b804239af21b54ba6cf83b0700d624fc6"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-04e0ec8857e56c7e63cc8a14250cfea93f144b03dd0df1504c78b3f0539a4215.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-04e0ec8857e56c7e63cc8a14250cfea93f144b03dd0df1504c78b3f0539a4215.sqlite",
+      "bytes": 233472,
+      "sha256": "c4721f13d294856b4f5155701585df94c5e492cf4223c4278c5c9c0c80142d7e"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-0b401c1c17e035be521d85c62a02fd8d1175af6802eb03ed295bd021eb9ee3e4.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-0b401c1c17e035be521d85c62a02fd8d1175af6802eb03ed295bd021eb9ee3e4.sqlite",
+      "bytes": 24780800,
+      "sha256": "4ac6d995fca70b1e67fe6c6cf90c96c026b06f6ad792ef7704633c8798963956"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-0b67885791aa4d133dd913455f2544bae9274835ceb34467d29b8bc2bb40b467.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-0b67885791aa4d133dd913455f2544bae9274835ceb34467d29b8bc2bb40b467.sqlite",
+      "bytes": 176128,
+      "sha256": "ba2a912b56229ead05c6c73fc118304f43cc3563101e49b400c02adc4e9d25b0"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-20271ce4c414575304f3b9a526b3ae34ecc2d3989ac871fe7254af1001aff24c.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-20271ce4c414575304f3b9a526b3ae34ecc2d3989ac871fe7254af1001aff24c.sqlite",
+      "bytes": 17465344,
+      "sha256": "2b1f6c2fbd2ce51675c97ff3c99a3b0cd97c67f00f4de069a19e303789084096"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-282727bf516b94319cec82f27bb86fe85330504c64b005f3e491721c128dcc3d.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-282727bf516b94319cec82f27bb86fe85330504c64b005f3e491721c128dcc3d.sqlite",
+      "bytes": 5455872,
+      "sha256": "9037c5edae9f819643037b9adb5bbbd2149593ae658c53b7c3b89708bc4e5371"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-30ac3f3bbfedef9d98e3db47d0722da677128a06f5d903420731a79b1421adc0.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-30ac3f3bbfedef9d98e3db47d0722da677128a06f5d903420731a79b1421adc0.sqlite",
+      "bytes": 7745536,
+      "sha256": "329d511109a30e6d8ec1a38db7dbd6cef2c094a85bf19affeec8d2b6bbab9d7a"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-385149afa3d0fe324155b3b205fd5345bec1a73e37792871bdc7ffca6c01b286.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-385149afa3d0fe324155b3b205fd5345bec1a73e37792871bdc7ffca6c01b286.sqlite",
+      "bytes": 4415488,
+      "sha256": "5d09ae59f9ef6a69d3061c40b2c7461fd161286212ba64023c115b742bf0e128"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-4ad6b1e46136a7b15e10ce0f9a5f8c7d1c240c924695e080627b8e344892c414.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-4ad6b1e46136a7b15e10ce0f9a5f8c7d1c240c924695e080627b8e344892c414.sqlite",
+      "bytes": 192512,
+      "sha256": "4486e38ffb19c4397579ca637ca8dc744c977c86c8398046cf34f44846550765"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-4f4e94334bf957343cab447fa6c44c9af7b050d4de331970e29f3ac216831271.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-4f4e94334bf957343cab447fa6c44c9af7b050d4de331970e29f3ac216831271.sqlite",
+      "bytes": 25600000,
+      "sha256": "147e45c2df00d1707e2baad8d8ef4928017e180f4be130cd6da7e8e019cd5768"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-53616622a13ea1fd141abe5725b1c68f3ebc17fb1b4a335f89a78617058b3b68.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-53616622a13ea1fd141abe5725b1c68f3ebc17fb1b4a335f89a78617058b3b68.sqlite",
+      "bytes": 11710464,
+      "sha256": "b6f042acbc84c705b65d607085c61b6229c08e05085043ec71f7148ce4c57d7d"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-6f807f8faf836d9cfcac7ac613bf753133c1dec6078bcbc2d99177c9fe969a45.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-6f807f8faf836d9cfcac7ac613bf753133c1dec6078bcbc2d99177c9fe969a45.sqlite",
+      "bytes": 225280,
+      "sha256": "118d835da834536f32d4734da5e49ec23caee945fa33676101f0d7e697fc0f4c"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-8ab21b26d658506deec6827cf6dc0d05e0e1b8764f3209b9938861e73d1967dd.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-8ab21b26d658506deec6827cf6dc0d05e0e1b8764f3209b9938861e73d1967dd.sqlite",
+      "bytes": 327680,
+      "sha256": "43d20f0d1ffa5a60f0c3871fe410aa2e5c571587075a4f048c62d613018c0aca"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-96e2ed5063d683f238119e06eeb52c6d0bccb70271554014f48db9cd507bb94e.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-96e2ed5063d683f238119e06eeb52c6d0bccb70271554014f48db9cd507bb94e.sqlite",
+      "bytes": 303104,
+      "sha256": "8e1d471b768b692941c0920054b010a90f1713e3d74a39b90630bc2367fb8263"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-a32d373c856d302585a1e823dc1016b91628a19cd6a0f91850a2febdcce22f47.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-a32d373c856d302585a1e823dc1016b91628a19cd6a0f91850a2febdcce22f47.sqlite",
+      "bytes": 15048704,
+      "sha256": "2c2ee0654c7eea718197db75c34ddb379c59d7d085408c07f411c1959dd5b70e"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-a335c8d381a2af7918e5de81e02ebbf1b7026a6329f82d163d4bb425b1bbdc07.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-a335c8d381a2af7918e5de81e02ebbf1b7026a6329f82d163d4bb425b1bbdc07.sqlite",
+      "bytes": 176128,
+      "sha256": "5411f309c9f02beb5c51c7a77b879cf11817d06c70fe90d496bc8e5e4cd35719"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-a572229b5c3b3c0c3a02de8bd50129c7d4507724c822b7496d074af029117290.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-a572229b5c3b3c0c3a02de8bd50129c7d4507724c822b7496d074af029117290.sqlite",
+      "bytes": 18550784,
+      "sha256": "d7675f9f84be803a5d08051a450ecdbb47e23632f41926204f1eabc4648d37c4"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-a5eab8c55f1080c612996b546d186bcef077833bbe462d1f0bf8bfe1dcad8724.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-a5eab8c55f1080c612996b546d186bcef077833bbe462d1f0bf8bfe1dcad8724.sqlite",
+      "bytes": 1261568,
+      "sha256": "f661cad799e5df03bc8efd8f71e2936e04e5fc8f1d27a6bc24b327ad6684892f"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-aa80ef5f81d07c3222844fdba57e7e4394eb1ef4e09f650ff82cc0845f30a6d5.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-aa80ef5f81d07c3222844fdba57e7e4394eb1ef4e09f650ff82cc0845f30a6d5.sqlite",
+      "bytes": 290816,
+      "sha256": "17b788c5a5888dd3e022a5d8e9d7f22ddbd22b5beeaabb74c7c773a65f9f8a51"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-bd931e0f8512cb63f67232d72c967e8dde8ff3c12f0c843535237d7c9de93ef5.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-bd931e0f8512cb63f67232d72c967e8dde8ff3c12f0c843535237d7c9de93ef5.sqlite",
+      "bytes": 176128,
+      "sha256": "144791da005726dc81752914c70f123178ed7ecc5bf050d90ddc867891d9d716"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-c0ffdbe639cec81c5231cf304afa1e9f7b70e3608c190d24b39ff1cd813887b9.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-c0ffdbe639cec81c5231cf304afa1e9f7b70e3608c190d24b39ff1cd813887b9.sqlite",
+      "bytes": 208896,
+      "sha256": "0e78ea755cb205324b7983cddedfb094da93917c7bbaf502b98e84d0cf0a0fd2"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-e715714745fddf01e42910d6d973f505e1e3938c8f765f50da949116f39311bd.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-e715714745fddf01e42910d6d973f505e1e3938c8f765f50da949116f39311bd.sqlite",
+      "bytes": 10600448,
+      "sha256": "75e7d229c1645a0a451c9a90f38d2fb7cc4396a2772076a15c9e9a56de9d8f45"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-f75fdabab5e61239b9b8770ebb3efd3447bd183f82a4ff3986b8b3440bd46690.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-f75fdabab5e61239b9b8770ebb3efd3447bd183f82a4ff3986b8b3440bd46690.sqlite",
+      "bytes": 9297920,
+      "sha256": "ba346f014dec28e4e7909ad18843c8103b7ecc9277f839e19567474892f5ea7a"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pages-f7660c381bb4cdc10767d81c29adacefcfc324abc5b55f2401750b9aac88b8c9.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pages-f7660c381bb4cdc10767d81c29adacefcfc324abc5b55f2401750b9aac88b8c9.sqlite",
+      "bytes": 282624,
+      "sha256": "cc7e18370954fc00a9779e440d1ffa435c14df25d0cee53a209a33cda0e3d4ca"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/pulpit-15c3f6250fef7cad03fac259c2c7d224afda3be2fb2408522948e2e8a2a07209.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/pulpit-15c3f6250fef7cad03fac259c2c7d224afda3be2fb2408522948e2e8a2a07209.sqlite",
+      "bytes": 63504384,
+      "sha256": "b26d7dc153fe19275b83c8dd130909e1cbfab0df3c85b8616a20bce86002455a"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/sermons-60a381c140d9056432f998c3d8b5d8e50ccd6a67619b45de522d7ade7aabdb9e.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/sermons-60a381c140d9056432f998c3d8b5d8e50ccd6a67619b45de522d7ade7aabdb9e.sqlite",
+      "bytes": 105906176,
+      "sha256": "e7f52d9cb9740fec38eb6f35c600eb945c76297e9edff43ef40ce8229476355e"
+    },
+    {
+      "path": "library/bible_study_data/catalogue_cache/wiersbe-4504d58adfd7290a6a0ddcdb40989b0cb1ca0568fbd66c08b6690c9bf8435bf9.sqlite",
+      "project_path": "study_library/src/main/assets/library/bible_study_data/catalogue_cache/wiersbe-4504d58adfd7290a6a0ddcdb40989b0cb1ca0568fbd66c08b6690c9bf8435bf9.sqlite",
+      "bytes": 32768,
+      "sha256": "4a51fa376508e3841ca3079e86d8370c8a3cd89df63b62c1363a9ec54e396183"
+    },
+    {
+      "path": "library/catalogue.db",
+      "project_path": "study_library/src/main/assets/library/catalogue.db",
+      "bytes": 12288,
+      "sha256": "836b2f44a920002b51f7d32c034fa090131e2de7fc54871d669370c1107b7221"
+    },
+    {
+      "path": "library/study_library.db",
+      "project_path": "study_library/src/main/assets/library/study_library.db",
+      "bytes": 677044224,
+      "sha256": "4f5c439501cbb1e1d79c1fdcf36619c386cfe9cda73b6dc5d0027f00e6dd8e51"
+    },
+    {
+      "path": "study/sermon_illustrations.db",
+      "project_path": "study_illustrations/src/main/assets/study/sermon_illustrations.db",
+      "bytes": 53104640,
+      "sha256": "b4de6d1b8b6667b8746ec9ed28b0acd3e887f55666e42c2308517274a03b31e1"
+    }
+  ],
+  "resource_bytes": 2162016256,
+  "setup_free_bytes": 2430451712,
+  "public_library_documents": 79,
+  "includes_personal_notes": false,
+  "caches_prepared": true,
+  "source_commit": "bf5e725",
+  "final_android_installed_size": "Measure after the later APK/AAB build."
+}

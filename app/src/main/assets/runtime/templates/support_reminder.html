@@ -1,0 +1,38 @@
+{# Same support card and account as the website About Developer page. #}
+<dialog id="mobileSupportDialog" class="mobile-support-dialog" aria-labelledby="mobileSupportTitle" data-gcash="09171655575">
+  <div class="dev-support-shell">
+    <div class="dev-support-modal">
+      <div class="dev-support-content">
+        <div class="dev-support-top">
+          <div class="dev-support-icon">♥</div>
+          <div>
+            <div class="dev-support-label">Support the mission</div>
+            <h2 class="dev-support-title" id="mobileSupportTitle">Help keep the tool moving forward.</h2>
+          </div>
+        </div>
+
+        <p class="dev-support-copy">
+          If this tool has been a blessing to your ministry, you may consider supporting its continued development and maintenance.
+          Voluntary donations help cover hosting, domain, maintenance, and service fees.
+        </p>
+        <span class="dev-voluntary">Completely voluntary — access is never paywalled</span>
+
+        <div class="dev-gcash-panel">
+          <div class="dev-gcash-head">
+            <img class="dev-gcash-logo" src="{{ url_for('static', filename='developers/Gcash Logo.png') }}" alt="GCash">
+            <span class="dev-secure-copy">Secure copy</span>
+          </div>
+          <div class="dev-gcash-number">0917 165 5575</div>
+          <div class="dev-gcash-name">Pijeme Franco Walawala</div>
+        </div>
+
+        <div class="dev-modal-actions">
+          <button type="button" class="dev-btn dev-copy" id="mobileSupportCopy">Copy GCash Number</button>
+          <button type="button" autofocus class="dev-btn dev-proceed" id="mobileSupportContinue">Continue →</button>
+        </div>
+
+        <p class="dev-note">Your prayers and support are greatly appreciated. To God be all the glory!</p>
+      </div>
+    </div>
+  </div>
+</dialog>

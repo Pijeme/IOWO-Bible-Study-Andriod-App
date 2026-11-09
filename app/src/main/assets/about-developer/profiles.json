@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Pijeme Franco Walawala",
+    "role": "Project Creator & Lead Developer",
+    "image": "images/pijeme.png",
+    "short": "A full-time servant of God, Area Overseer of International One Way Outreach (IOWO) District 4 – Area 7, musician, music producer, and part-time programmer who uses technology to help make ministry more organized and efficient.",
+    "background": "A full-time servant of God, Area Overseer of International One Way Outreach (IOWO) District 4 – Area 7, musician, music producer, and part-time programmer.",
+    "education": [
+      "STI — Diploma in Information Technology",
+      "Immanuel Bible College — AB Music, Undergraduate"
+    ],
+    "skills": [
+      "Programming",
+      "Website Design"
+    ],
+    "contribution": "Pijeme is the project creator and lead developer of the IOWO District 4 Tool. He programmed and developed the website with the guidance and assistance of friends and co-developers, together with modern development tools.",
+    "story": "The District 4 Tool began through casual conversations with programmer friends who would eventually become co-developers of the project. The conversations were filled with ‘What if we could...?’ ideas. Those questions gradually became challenges, and the challenges eventually became ‘Why not?’ What started as an idea became a real project when Pijeme took the initiative to lead the team in developing the system.",
+    "goal": "The original goal was simple: make monthly reporting easier for the pastors under Area 7. As development continued, one idea led to another. The project grew beyond an online reporting system and became a more comprehensive church and ministry tool. Today, the vision is to help the whole of IOWO District 4 use technology to make ministry more organized, accessible, and efficient.",
+    "intro": "I am first and foremost a servant of God. Ministry has always been at the center of what I do, whether I am preaching, leading, making music, producing songs, or working with technology. Programming is not simply about building websites for me. I enjoy looking at problems we encounter in ministry and asking, ‘Can we build something that will make this easier?’",
+    "verse": "Colossians 3:23",
+    "verse_text": "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
+    "verse_note": "This has always been my go-to verse whenever I do something. It reminds me to give my very best—my 101%—because ultimately, I am doing it for the Lord.",
+    "message": "To all our pastors, workers, leaders, and members using the District 4 Tool: this system was created for you and for the ministry we share. This project is not about showing what technology can do. It is about using technology to make our work in the ministry a little easier, more organized, and more efficient. My prayer is that every feature we develop will ultimately serve one greater purpose: to help us serve God and His people better. To God be all the glory!",
+    "contacts": [
+      {
+        "label": "Mobile",
+        "value": "0917 165 5575",
+        "href": "tel:+639171655575"
+      },
+      {
+        "label": "Facebook",
+        "value": "Pijeme Franco Walawala",
+        "href": "https://www.facebook.com/"
+      },
+      {
+        "label": "YouTube",
+        "value": "Pijeme550",
+        "href": "https://www.youtube.com/"
+      },
+      {
+        "label": "Email",
+        "value": "pijeme.walawala@gmail.com",
+        "href": "mailto:pijeme.walawala@gmail.com"
+      }
+    ]
+  },
+  {
+    "name": "Bernard Balansag",
+    "role": "Deployment, Infrastructure & Technical Support",
+    "image": "images/bernard.png",
+    "short": "A software developer and IOWO Miramonte Church guitarist with experience in web and mobile applications, database management, server hosting, deployment, technical support, and application maintenance.",
+    "background": "A software developer with experience in developing and maintaining web and mobile applications. He also serves as a guitarist at IOWO Miramonte Church and enjoys using technology to create practical solutions for people and organizations.",
+    "education": [
+      "Bachelor of Science in Information Technology — Polytechnic University of the Philippines"
+    ],
+    "skills": [
+      "Web and Mobile Application Development",
+      "Application Maintenance and Support",
+      "Database Management",
+      "Server Hosting and Deployment"
+    ],
+    "contribution": "Bernard contributes to the District 4 Tool through hosting, deployment, technical support, and maintenance of the system, helping keep the application reliable and available.",
+    "story": "Bernard became involved by helping with the technical setup, hosting, deployment, and ongoing maintenance of the District 4 Tool.",
+    "goal": "His goal is to help provide a reliable and easy-to-use system that supports the needs of District 4, with the hope that the system can eventually become useful to IOWO churches around the world.",
+    "intro": "I am a software developer with experience in developing and maintaining web and mobile applications. I enjoy using technology to create practical solutions that can help people and organizations with their daily work.",
+    "verse": "Matthew 11:29",
+    "verse_text": "Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls.",
+    "verse_note": "Matthew 11:29 is Bernard’s favorite Bible verse and reflects a life of learning from Christ while serving with humility.",
+    "message": "Thank you so much for being part of this project and for supporting the District 4 Tool. May God bless each and every one of you with strength, knowledge, wisdom, and guidance as we continue to serve the Lord together.",
+    "contacts": [
+      {
+        "label": "GitHub",
+        "value": "github.com/nhardbalansag",
+        "href": "https://github.com/nhardbalansag"
+      }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% from 'ui_icons.html' import icon %}
+{% block content %}
+<p class="mobile-account-help"><a href="/mobile/privacy">Privacy &amp; data deletion</a></p>
+{% if stage == 'login' %}
+<section class="splash-container mobile-login-card" data-stage="login" aria-labelledby="loginTitle">
+<img src="{{ url_for('branding_icon') }}" alt="IOWO District 4" class="splash-logo">
+<h1 id="loginTitle" class="splash-title">IOWO D4<br><span>Bible Study</span></h1>
+<div class="mobile-login-form-card">
+<h2 class="mobile-sr-only">Sign in once</h2>
+<form id="loginForm" autocomplete="on">
+<div class="mobile-login-field"><label for="loginUsername" class="mobile-sr-only">Username</label><span class="mobile-input-icon">{{ icon('user') }}</span><input id="loginUsername" name="username" type="text" placeholder="Username" autocomplete="username" required maxlength="200" autocapitalize="none" spellcheck="false"></div>
+<div class="mobile-login-field"><label for="loginPassword" class="mobile-sr-only">Password</label><span class="mobile-input-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg></span><input id="loginPassword" name="password" type="password" placeholder="Password" autocomplete="current-password" required maxlength="500"><button id="mobileTogglePassword" type="button" aria-label="Show password" aria-pressed="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path id="mobilePasswordSlash" d="m3 3 18 18" hidden/></svg></button></div>
+<p id="mobileStatus" role="status" aria-live="polite"></p>
+<button type="submit">Log In</button>
+<p class="mobile-login-remember">{{ icon('check') }} Your sign-in is remembered</p>
+</form>
+</div>
+<div class="mobile-login-storage">{{ icon('book') }}<p><strong>{{ '%.2f'|format(resource_manifest.resource_bytes/1000000000) }} GB library</strong><span>{{ '%.2f'|format(resource_manifest.setup_free_bytes/1000000000) }} GB extra setup space</span></p></div>
+<p class="mobile-login-footer">Agreement accepted · Storage checked at setup</p>
+<p class="mobile-account-help">Use your website account. Need an account? Contact your Area Overseer.</p>
+</section>
+{% else %}
+<section class="mobile-onboarding" data-stage="{{ stage }}">
+<img class="mobile-brand" src="/static/img/logo.png" alt="IOWO District 4">
+<h1>IOWO D4 Bible Study</h1>
+<p class="mobile-intro">Your Bible and study library, ready wherever you serve.</p>
+{% if stage == 'agreement' %}
+<h2>Welcome · Use and privacy agreement</h2>
+<div class="mobile-agreement" tabindex="0" aria-label="Use and privacy agreement">
+<p>This app is free for authorized IOWO accounts. It includes Bible texts and study resources for reading, personal study and ministry preparation.</p>
+<p>Please respect the publishers' copyright notices and attributions shown with each resource. Permission to use the app does not transfer ownership of those resources.</p>
+<p>Your notes, highlights, bookmarks and reading preferences are saved on your device. Optional online synchronization sends your sermon notes through the IOWO website to the configured Google Drive backup. The shared installation contains no other users' notes or account passwords.</p>
+<p>Your existing website credentials are sent over HTTPS for the first login. The app securely remembers a revocable device sign-in; it does not retain your password. Normal offline use does not require repeated login.</p>
+<p>There are no advertisements, subscriptions or paid upgrades. Export or sync important notes before uninstalling the app or clearing its data.</p>
+<p>You control whether to start online backup. Publisher and contact details are available from About Publisher on the loading screen.</p>
+</div>
+<div class="mobile-storage-notice" role="note"><strong>Offline storage required</strong>
+<p>The bundled study resources contain <b id="resourceSize">{{ '%.2f'|format(resource_manifest.resource_bytes/1000000000) }} GB</b> of data.</p>
+<p>First setup needs at least <b>{{ '%.2f'|format(resource_manifest.setup_free_bytes/1000000000) }} GB of additional free space</b> after Android installs the app. Personal notes and later backups use additional space.</p>
+<p>The Android installation itself also occupies storage; its exact packaged size will be measured when an APK is built.</p>
+</div>
+<form id="agreementForm"><label class="mobile-check"><input type="checkbox" id="agreementAccepted" required> I have read the agreement and storage requirements.</label>
+<button type="submit" class="btn-primary">Agree and continue</button></form>
+{% else %}
+<h2>Prepare your offline library</h2>
+<p>All study resources came with this installation. This step prepares them on your phone; it does not download the library.</p>
+<p id="storageCheck">Checking available storage…</p>
+<button id="prepareLibrary" type="button" class="btn-primary" disabled>Prepare offline library</button>
+<div id="setupProgress" hidden><progress id="setupBar" max="100"></progress><p id="setupMessage" role="status"></p></div>
+{% endif %}
+<p id="mobileStatus" role="status" aria-live="polite"></p>
+</section>
+{% endif %}
+{% endblock %}

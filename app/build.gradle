@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'com.chaquo.python'
+}
+
+def playDelivery = providers.gradleProperty('playDelivery').map { it.toBoolean() }.getOrElse(false)
+android {
+    namespace 'org.iowo.d4.biblestudy'
+    compileSdk 36
+    buildToolsVersion '36.0.0'
+    defaultConfig {
+        applicationId 'org.iowo.d4.biblestudy'
+        minSdk 26
+        targetSdk 36
+        versionCode 2
+        versionName '1.0.1'
+        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+        buildConfigField 'String', 'WEBSITE_URL', '"https://iowod4tool.coresite.pro"'
+    }
+    def releaseStore = System.getenv('IOWO_RELEASE_STORE')
+    if (releaseStore) {
+        signingConfigs {
+            production {
+                storeFile file(releaseStore)
+                storePassword System.getenv('IOWO_RELEASE_STORE_PASSWORD')
+                keyAlias System.getenv('IOWO_RELEASE_KEY_ALIAS')
+                keyPassword System.getenv('IOWO_RELEASE_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            debuggable false
+            if (releaseStore) signingConfig signingConfigs.production
+        }
+    }
+    buildFeatures { buildConfig true }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    if (playDelivery) {
+        assetPacks = [':study_core', ':study_library', ':study_illustrations']
+    } else {
+        sourceSets.main.assets.srcDirs += [
+            '../study_core/src/main/assets', '../study_library/src/main/assets',
+            '../study_illustrations/src/main/assets'
+        ]
+    }
+    packaging { resources.excludes += ['META-INF/LICENSE*', 'META-INF/NOTICE*'] }
+    lint { abortOnError true }
+}
+
+def pythonHome = new File(rootDir, '.tools/python')
+def portablePython = pythonHome.exists() ? fileTree(pythonHome).matching { include '**/python.exe' }.files.find { it.parentFile.name == 'cpython-3.13.13-windows-x86_64-none' || it.parentFile.name.startsWith('cpython-3.13.') } : null
+chaquopy {
+    defaultConfig {
+        version '3.13'
+        if (providers.gradleProperty('buildPython').isPresent()) {
+            buildPython providers.gradleProperty('buildPython').get()
+        } else if (portablePython != null) {
+            buildPython portablePython.absolutePath
+        } else {
+            buildPython 'py', '-3.13'
+        }
+        pip {
+            install 'Flask==3.1.2'
+            install 'requests==2.32.5'
+            // PDF output uses Android's own text/PDF renderer. No old native
+            // Pillow/FreeType/JPEG wheels are needed on 16 KB page devices.
+        }
+    }
+}
+dependencies {
+    implementation 'androidx.webkit:webkit:1.12.1'
+    implementation 'androidx.core:core:1.15.0'
+}
+
+tasks.register('verifyOfflineResources') {
+    doLast {
+        def manifestFile = file('src/main/assets/resource-manifest.json')
+        if (!manifestFile.exists()) throw new GradleException('Run scripts/prepare_resources.py before compiling.')
+        def manifest = new groovy.json.JsonSlurper().parse(manifestFile)
+        manifest.files.each { entry ->
+            def path = new File(rootDir, entry.project_path)
+            if (!path.isFile() || path.length() != entry.bytes) throw new GradleException('Missing or incomplete offline resource: ' + entry.project_path)
+        }
+    }
+}
+tasks.named('preBuild').configure { dependsOn 'verifyOfflineResources' }
+
+// Avoid producing an unsigned file which looks ready for distribution.
+gradle.taskGraph.whenReady { graph ->
+    if (graph.allTasks.any { it.path in [':app:assembleRelease', ':app:bundleRelease'] } &&
+        !['IOWO_RELEASE_STORE','IOWO_RELEASE_STORE_PASSWORD','IOWO_RELEASE_KEY_ALIAS','IOWO_RELEASE_KEY_PASSWORD'].every { System.getenv(it) }) {
+        throw new GradleException('Release signing credentials must be supplied through the IOWO_RELEASE_* environment variables.')
+    }
+}

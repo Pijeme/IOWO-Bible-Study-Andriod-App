@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IOWO D4 Bible Study</string>
+    <string name="about_publisher">About Publisher</string>
+    <string name="back_to_app">Back to app</string>
+    <string name="startup_error">The offline workspace could not open. Your saved data was kept.</string>
+    <string name="loading">Opening your offline study library…</string>
+</resources>

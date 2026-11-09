@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block title %}My saved study · IOWO D4{% endblock %}
+{% block content %}<section class="mobile-saved"><h1>My notes, marks &amp; bookmarks</h1>
+<p><a href="/">← Back to Bible Study</a></p>
+{% for item in items %}<article class="mobile-saved-card" data-item="{{ item.id }}" data-kind="{{ 'study' if item.format=='STUDY' else 'bookmarks' if item.kind=='bookmark' else 'annotations' }}">
+<h2>{{ item.reference }} · {{ item.kind }}</h2>
+<p>{{ item.selected_text }}</p>{% if item.note %}<p>{{ item.note }}</p>{% endif %}
+<a href="{{ item.jump_url }}">{{ 'Open study source' if item.format=='STUDY' else 'Open passage' }}</a>
+<button type="button" class="mobile-delete-mark">Remove saved item</button></article>{% endfor %}
+{% if not items %}<p>No saved items yet. Select text in your Bible or study tools to save a mark, note or bookmark.</p>{% endif %}
+</section>{% endblock %}

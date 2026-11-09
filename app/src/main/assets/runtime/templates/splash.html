@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="mobile-launch" aria-label="Opening IOWO D4 Bible Study">
+<img class="mobile-launch-art" src="{{ url_for('branding_splash') }}" alt="IOWO D4 Bible Study">
+<div class="mobile-launch-actions">
+<p class="mobile-launch-status" role="status"><span aria-hidden="true"></span>Opening your offline study library…</p>
+<a id="mobileTutorials" href="/mobile/tutorials/" data-open-tutorials>Tutorials &amp; guided tour</a>
+<a id="mobileOpenStudy" href="/">Open Bible Study</a>
+<a id="mobilePublisher" href="/about-publisher?return=splash">About Publisher <span aria-hidden="true">↗</span></a>
+</div>
+</section>
+{% endblock %}
