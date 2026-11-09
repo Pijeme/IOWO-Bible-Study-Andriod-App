@@ -92,6 +92,10 @@ public final class NativeServices {
         onUi(() -> { MainActivity current=activity.get(); if(current!=null)current.showTutorials(false); });
     }
 
+    @JavascriptInterface public void setNotesFormatting(boolean active) {
+        onUi(() -> { MainActivity current=activity.get(); if(current!=null)current.setNotesFormatting(active); });
+    }
+
     @JavascriptInterface public void studyProgress(int percent,String message) {
         if(message==null || message.length()>200) return;
         onUi(() -> { MainActivity current=activity.get(); if(current!=null) current.reportStudyProgress(percent,message); });

@@ -342,14 +342,14 @@ const LESSONS = [
     "id": "notes-fonts",
     "group": "Sermon Notes",
     "title": "Font, size, bold, italic and colour",
-    "summary": "Use More formatting on the selected sermon text.",
+    "summary": "Use formatting toolbar on the selected sermon text.",
     "steps": [
-      "Select text in the sermon editor and open More formatting.",
+      "Select text in the sermon editor and open formatting toolbar.",
       "Choose a font family in the shortened dropdown. Font size, A+ and A- sit beside it.",
-      "Use the next row for case, Bold, Italic, text colour, Clear and Undo.",
+      "Use case beside A-, Bold beside Underline, and the visible colour, Clear Format, Copy, Undo and Erase tools.",
       "Review the result and use Save or let autosave finish."
     ],
-    "tip": "Clear removes formatting from the selection; Undo reverses the most recent supported edit."
+    "tip": "Clear Format removes formatting. Erase deletes the selected words; Undo restores supported edits."
   },
   {
     "id": "notes-structure",
@@ -360,7 +360,7 @@ const LESSONS = [
       "Enter a main point with a Roman numeral marker, such as I. or II. followed by its text.",
       "Use lettered markers such as A. or B. for subpoints.",
       "Use paragraphs to keep Scripture, explanations and applications separate.",
-      "Select text and use More formatting to adjust emphasis or size where needed."
+      "Select text and use formatting toolbar to adjust emphasis or size where needed."
     ],
     "tip": ""
   },
@@ -471,13 +471,13 @@ const LESSONS = [
   {
     "id": "startup",
     "group": "Saving, sync & offline use",
-    "title": "Startup progress and study verses",
-    "summary": "Understand what the loading screen prepares.",
+    "title": "Loading, study verses and splash",
+    "summary": "Follow preparation, then enjoy the full artwork before the reader opens.",
     "steps": [
-      "Open the app and watch the startup progress.",
-      "Thirty study-focused Bible verses can rotate while the local workspace prepares.",
-      "The Bible passage, local sermon-note list and current-chapter tools prepare before the reader opens.",
-      "If startup cannot finish, use Retry. Existing notes are kept."
+      "Open the app. The loading bar shows progress while your local Bible and notes prepare.",
+      "Read one of thirty verses about studying God’s Word while you wait.",
+      "After preparation, the loading bar and verse disappear. The artwork shows alone for three seconds, then the reader opens.",
+      "If startup cannot finish, follow the recovery message or reopen the app. Existing notes are kept."
     ],
     "tip": "This preparation uses installed/local resources; it is different from restoring notes with Sync Notes."
   },

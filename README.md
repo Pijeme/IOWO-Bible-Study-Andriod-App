@@ -1,7 +1,7 @@
 # IOWO Bible Study Andriod App
 
 Android source for **IOWO D4 Bible Study**, package `org.iowo.d4.biblestudy`,
-version **1.0.1 (2)**. Native Java hosts a local Python/Flask study engine in
+version **1.0.2 (3)**. Native Java hosts a local Python/Flask study engine in
 Android WebView. Bible texts, dictionaries and study resources work offline
 once prepared. Personal sermon notes save locally, with optional account-based
 Google Drive backup through the District 4 website.
@@ -119,3 +119,28 @@ buttons. Refresh that source when the native splash changes. Capture and
 encoding dependencies are development tools only, not app dependencies.
 
 Sermon conversion has been retired in the app and website. Existing notes and Sync Notes remain available.
+
+## Huawei / universal compatibility release
+
+The default modern profile still embeds Python 3.13 for ARM64 and x86-64.
+Use `-PcompatibilityBuild=true` for a separate Python 3.11 build including
+armeabi-v7a, arm64-v8a and x86_64. This is the current production/share APK
+profile. Keep a matching host Python 3.11 under `.tools/python` or supply
+`-PbuildPython=C:/path/to/python.exe`. MarkupSafe is pinned to 3.0.3 for its
+verified ARM32 wheel.
+
+```powershell
+.\gradlew.bat :app:assembleRelease :app:lintRelease -PcompatibilityBuild=true --console=plain
+```
+
+Production signing still uses the existing IOWO_RELEASE_* environment variables.
+Do not uninstall a debug-signed test app to replace it with this production APK.
+The startup splash keeps the full artwork visible with the original rounded
+About Publisher and Tutorials buttons. A loading bar and 30 rotating study
+verses show while the Bible and saved notes prepare. Once ready, these controls
+hide and the artwork remains alone for three visible seconds before the reader
+opens. Help dialogs and backgrounding restart that visible interval.
+
+The connected test phone was updated in place to 1.0.3 (4), preserving both
+database hashes. See test-results/splash-device-verification.json. The current
+production/share APK is ../District4-Release-20261109/APK/IOWO-D4-Bible-Study-1.0.3-share.apk; prior 1.0.2 is archived.

@@ -97,6 +97,9 @@
         try{Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>window.IOWOAndroid.copyText(String(text))}})}catch(_){}
     }
     window.iowoHandleBack=()=>{
+        if(document.querySelector('#bsNotesTools[data-open="true"]:not([hidden])')){
+            $('bsNotesDismissSelection').click();return true;
+        }
         const dialog=[...document.querySelectorAll('dialog[open]')].at(-1);if(dialog){dialog.close();return true}
         if(document.querySelector('[aria-expanded=true][id^=bsNotes]')){document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));return true}
         return false;

@@ -248,10 +248,9 @@ def main():
                 'notes-highlighting': [('#bsNotesEditor > :last-child', 'Select the words in your sermon'), ('[data-notes-selection-command="hiliteColor"][data-color="#fffeb3"]', 'Tap a highlight colour'), ('[data-notes-selection-command="underline"]', 'Or underline the selection')],
                 'notes-copy': [('#bsNotesCopySelection', 'Copy the selected sermon text')],
             })
-            click('#bsNotesTools summary')
             capture('sermon-formatting', {
                 'notes-fonts': [('#bsNotesFont', 'Choose the font family'), ('#bsNotesFontSize', 'Set size or use A+ / A-'), ('[data-notes-command="bold"]', 'Apply bold or italic')],
-                'notes-structure': [('#bsNotesTools summary', 'Open More formatting'), ('#bsNotesFontSize', 'Format headings and main points')],
+                'notes-structure': [('#bsNotesFormat', 'Use the visible formatting tools'), ('#bsNotesFontSize', 'Format headings and main points')],
             })
             dismiss()
             page.keyboard.press('Escape')
@@ -288,19 +287,12 @@ def main():
             app.device_state.save_profile(None)
             page.goto(url + '/')
             capture('first-sign-in', {'storage-login': [('#loginUsername', 'Sign in with your website account'), ('#loginForm button[type="submit"]', 'Log in once on this device'), ('.mobile-login-storage', 'Allow space for the offline library')]}, '.mobile-login-card')
-            # Startup help uses a captured native progress screen, not a replica.
-            startup = PROJECT / '.test-data/tutorial-native-startup.png'
-            image = Image.open(startup).convert('RGB')
-            assert image.getextrema() != ((0,0),(0,0),(0,0)), 'Native screenshot is blank'
-            # Crop the captured 720x1612 native frame to progress, verse and help.
-            image = image.crop((0, 990, 720, 1508))
-            image.thumbnail((585, 585))
-            image.save(images / 'native-startup.webp', 'WEBP', quality=79, method=6)
-            manifest['startup'] = dict(file='images/native-startup.webp', width=390, height=round(518*390/720),
-                                       marks=[dict(label='Progress while Bible and notes prepare', x=41, y=51, w=46, h=7, badge=dict(x=22,y=24)),
-                                              dict(label='Read a study verse while you wait', x=70, y=95, w=210, h=35, badge=dict(x=345,y=150))])
-            manifest['tutorial-replay'] = dict(file='images/native-startup.webp', width=390, height=round(518*390/720),
-                                              marks=[dict(label='Open Tutorials from the splash screen', x=222, y=214, w=111, h=54)])
+            # Capture the actual shared app splash, with the new static artwork.
+            page.goto(url + '/mobile/splash')
+            capture('static-splash', {
+                'startup': [('.mobile-launch-art', 'The full artwork stays still while local study tools prepare')],
+                'tutorial-replay': [('#mobileTutorials', 'Open Tutorials to review any feature')],
+            })
             browser.close()
         lesson_source = (output / 'tutorial.js').read_text(encoding='utf-8')
         lessons = json.JSONDecoder().raw_decode(lesson_source[lesson_source.index('['):])[0]
@@ -346,7 +338,7 @@ def capture_store_assets(destination):
             page.evaluate("getSelection().removeAllRanges();document.querySelector('#bsNotesEditor').blur();document.querySelector('#bsBible').scrollTop=0")
             page.screenshot(path=str(destination/'03-sermon-notes.png'))
             page.evaluate("""()=>{const e=document.querySelector('#bsNotesEditor');e.focus();const r=document.createRange();r.selectNodeContents(e.lastElementChild);getSelection().removeAllRanges();getSelection().addRange(r);document.dispatchEvent(new Event('selectionchange'));}""")
-            page.locator('#bsNotesTools').wait_for(state='visible');page.locator('#bsNotesTools summary').click()
+            page.locator('#bsNotesTools').wait_for(state='visible')
             page.screenshot(path=str(destination/'04-sermon-formatting.png'))
             page.keyboard.press('Escape');page.locator('#bsLayoutMode').select_option('study');page.locator('#bsCommentaryTab').click();page.locator('#bsCommentaryResults .bs-loading-notice').wait_for(state='hidden')
             page.evaluate("document.querySelector('#bsStudy').scrollTop=0")

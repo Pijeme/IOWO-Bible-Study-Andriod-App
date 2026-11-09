@@ -3,6 +3,9 @@ plugins {
     id 'com.chaquo.python'
 }
 
+def compatibilityBuild = providers.gradleProperty('compatibilityBuild').map { it.toBoolean() }.getOrElse(false)
+def embeddedPython = compatibilityBuild ? '3.11' : '3.13'
+
 def playDelivery = providers.gradleProperty('playDelivery').map { it.toBoolean() }.getOrElse(false)
 android {
     namespace 'org.iowo.d4.biblestudy'
@@ -12,9 +15,12 @@ android {
         applicationId 'org.iowo.d4.biblestudy'
         minSdk 26
         targetSdk 36
-        versionCode 2
-        versionName '1.0.1'
-        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+        versionCode 4
+        versionName '1.0.3'
+        ndk {
+            if (compatibilityBuild) abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+            else abiFilters 'arm64-v8a', 'x86_64'
+        }
         buildConfigField 'String', 'WEBSITE_URL', '"https://iowod4tool.coresite.pro"'
     }
     def releaseStore = System.getenv('IOWO_RELEASE_STORE')
@@ -52,20 +58,21 @@ android {
 }
 
 def pythonHome = new File(rootDir, '.tools/python')
-def portablePython = pythonHome.exists() ? fileTree(pythonHome).matching { include '**/python.exe' }.files.find { it.parentFile.name == 'cpython-3.13.13-windows-x86_64-none' || it.parentFile.name.startsWith('cpython-3.13.') } : null
+def portablePython = pythonHome.exists() ? fileTree(pythonHome).matching { include '**/python.exe' }.files.find { it.parentFile.name.startsWith('cpython-' + embeddedPython + '.') || it.parentFile.name.startsWith('cpython-' + embeddedPython + '-') } : null
 chaquopy {
     defaultConfig {
-        version '3.13'
+        version embeddedPython
         if (providers.gradleProperty('buildPython').isPresent()) {
             buildPython providers.gradleProperty('buildPython').get()
         } else if (portablePython != null) {
             buildPython portablePython.absolutePath
         } else {
-            buildPython 'py', '-3.13'
+            buildPython 'py', '-' + embeddedPython
         }
         pip {
             install 'Flask==3.1.2'
             install 'requests==2.32.5'
+            if (compatibilityBuild) install 'MarkupSafe==3.0.3'
             // PDF output uses Android's own text/PDF renderer. No old native
             // Pillow/FreeType/JPEG wheels are needed on 16 KB page devices.
         }

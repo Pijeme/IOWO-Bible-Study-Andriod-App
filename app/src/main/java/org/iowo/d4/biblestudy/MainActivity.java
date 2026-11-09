@@ -24,22 +24,29 @@ public final class MainActivity extends Activity {
     private static NativeServices services;
     private FrameLayout root;
     private WebView reader;
-    private TextView loading;
+    private boolean notesFormattingKeyboardBlocked;
+    private TextView loading, startupVerse;
+    private ProgressBar startupProgress;
+    private LinearLayout preparation, splashActions;
+    private JSONArray startupVerses;
+    private int verseIndex;
+    private boolean activityResumed=false, readerShown=false, splashHoldFinished=false, splashWaitScheduled=false;
+    private final Runnable rotateVerse=new Runnable() {
+        @Override public void run() {
+            if(readerPrepared || startupFailed || !activityResumed || isFinishing()) return;
+            showStartupVerse(); ui.postDelayed(this,5000);
+        }
+    };
+    private final Runnable finishSplashHold=() -> {
+        splashWaitScheduled=false;
+        if(!canPresentSplash())return;
+        splashHoldFinished=true; revealReader();
+    };
     private String baseUrl;
     private String pendingUrl;
     private Dialog aboutDialog, tutorialDialog;
     private WebView tutorialView;
-    private ProgressBar startupProgress;
-    private TextView startupVerse;
-    private JSONArray startupVerses;
-    private int verseIndex;
     private boolean readerPrepared=false, startupFailed=false;
-    private final Runnable rotateVerse=new Runnable() {
-        @Override public void run() {
-            if(readerPrepared || isFinishing()) return;
-            showStartupVerse(); ui.postDelayed(this,5000);
-        }
-    };
     private final Handler ui = new Handler(Looper.getMainLooper());
 
     private int dp(int value) { return Math.round(getResources().getDisplayMetrics().density * value); }
@@ -97,7 +104,7 @@ public final class MainActivity extends Activity {
             artwork.setImageDrawable(Drawable.createFromStream(image, "splash"));
         } catch (IOException ignored) { artwork.setImageResource(R.drawable.app_icon); }
         root.addView(artwork, new FrameLayout.LayoutParams(-1, -1));
-        LinearLayout preparation=new LinearLayout(this);
+        preparation=new LinearLayout(this);
         preparation.setOrientation(LinearLayout.VERTICAL); preparation.setPadding(dp(18),dp(14),dp(18),dp(14));
         GradientDrawable surface=new GradientDrawable(); surface.setColor(0xEE102449); surface.setCornerRadius(dp(16));
         preparation.setBackground(surface);
@@ -114,8 +121,8 @@ public final class MainActivity extends Activity {
         try { interfaceFont=Typeface.createFromAsset(getAssets(),"runtime/static/fonts/SpaceGrotesk-Variable.ttf"); }
         catch(RuntimeException ignored) { }
         loading.setTypeface(interfaceFont); startupVerse.setTypeface(interfaceFont);
-        FrameLayout.LayoutParams status=new FrameLayout.LayoutParams(-1,-2,Gravity.BOTTOM);
-        status.bottomMargin=dp(82); status.leftMargin=status.rightMargin=dp(20); root.addView(preparation,status);
+        FrameLayout.LayoutParams status=new FrameLayout.LayoutParams(-1,-2,Gravity.TOP);
+        status.topMargin=dp(12); status.leftMargin=status.rightMargin=dp(20); root.addView(preparation,status);
         try(InputStream input=getAssets().open("branding/startup-verses.json")) {
             ByteArrayOutputStream bytes=new ByteArrayOutputStream(); byte[] buffer=new byte[4096]; int count;
             while((count=input.read(buffer))!=-1) bytes.write(buffer,0,count);
@@ -123,7 +130,7 @@ public final class MainActivity extends Activity {
             verseIndex=getPreferences(MODE_PRIVATE).getInt("startup-verse",0)%startupVerses.length();
             getPreferences(MODE_PRIVATE).edit().putInt("startup-verse",(verseIndex+1)%startupVerses.length()).apply();
         } catch(Exception ignored) { startupVerses=null; }
-        ui.post(rotateVerse);
+        showStartupVerse();
         Button about = new Button(this);
         about.setText(R.string.about_publisher); about.setTextColor(Color.rgb(23, 46, 78));
         about.setAllCaps(false); about.setTypeface(interfaceFont); about.setLetterSpacing(.02f);
@@ -133,16 +140,16 @@ public final class MainActivity extends Activity {
         buttonSurface.setStroke(dp(1),Color.rgb(158,189,202)); about.setBackground(buttonSurface);
         FrameLayout.LayoutParams action = new FrameLayout.LayoutParams(-2, dp(50), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
         action.bottomMargin = dp(20);
-        LinearLayout actions=new LinearLayout(this); actions.setGravity(Gravity.CENTER);
+        splashActions=new LinearLayout(this); splashActions.setGravity(Gravity.CENTER);
         about.setPadding(dp(16),0,dp(16),0);
-        actions.addView(about,new LinearLayout.LayoutParams(-2,dp(50)));
+        splashActions.addView(about,new LinearLayout.LayoutParams(-2,dp(50)));
         Button tutorials=new Button(this); tutorials.setText("Tutorials"); tutorials.setAllCaps(false);
         tutorials.setTextColor(Color.WHITE); tutorials.setTypeface(interfaceFont);
         GradientDrawable tutorialSurface=new GradientDrawable(); tutorialSurface.setColor(0xEE236C72);
         tutorialSurface.setCornerRadius(dp(24)); tutorials.setBackground(tutorialSurface);
         tutorials.setPadding(dp(22),0,dp(22),0);
         LinearLayout.LayoutParams tutorialAction=new LinearLayout.LayoutParams(-2,dp(50));tutorialAction.leftMargin=dp(10);
-        actions.addView(tutorials,tutorialAction);root.addView(actions,action);
+        splashActions.addView(tutorials,tutorialAction);root.addView(splashActions,action);
         about.setOnClickListener(view -> showAbout());tutorials.setOnClickListener(view -> showTutorials(false));
     }
 
@@ -158,21 +165,48 @@ public final class MainActivity extends Activity {
         startupProgress.setProgress(Math.max(startupProgress.getProgress(),Math.min(100,value))); loading.setText(message);
     }
     void workspaceReady() {
-        readerPrepared=true; ui.removeCallbacks(rotateVerse);
+        if(readerPrepared || startupFailed)return;
+        readerPrepared=true;ui.removeCallbacks(rotateVerse);
+        startupProgress.setProgress(100);
+        preparation.setVisibility(View.GONE);splashActions.setVisibility(View.GONE);
         revealReader();
     }
+    private boolean canPresentSplash() {
+        return activityResumed && !isFinishing() && !isDestroyed() && reader!=null && readerPrepared && !startupFailed &&
+            !(aboutDialog!=null && aboutDialog.isShowing()) && !(tutorialDialog!=null && tutorialDialog.isShowing());
+    }
     private void revealReader() {
-        if(isFinishing() || reader==null || !readerPrepared ||
-            (aboutDialog!=null && aboutDialog.isShowing()) || (tutorialDialog!=null && tutorialDialog.isShowing())) return;
-        root.removeAllViews(); reader.setAlpha(1f); reader.setEnabled(true);
+        if(readerShown || !canPresentSplash())return;
+        if(!splashHoldFinished) {
+            if(!splashWaitScheduled) {
+                splashWaitScheduled=true;
+                android.util.Log.i("IOWOStartup","Study ready; displaying artwork for 3000 ms at elapsed="+SystemClock.elapsedRealtime());
+                ui.postDelayed(finishSplashHold,3000);
+            }
+            return;
+        }
+        readerShown=true;
+        android.util.Log.i("IOWOStartup","Opening prepared reader at elapsed="+SystemClock.elapsedRealtime());
+        root.removeAllViews();reader.setAlpha(1f);reader.setEnabled(true);
         reader.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_AUTO);
         root.addView(reader,new FrameLayout.LayoutParams(-1,-1));
+    }
+    void setNotesFormatting(boolean active) {
+        if(notesFormattingKeyboardBlocked==active)return;
+        notesFormattingKeyboardBlocked=active;
+        if(reader==null)return;
+        android.view.inputmethod.InputMethodManager input=(android.view.inputmethod.InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+        if(input!=null){
+            if(active)input.hideSoftInputFromWindow(reader.getWindowToken(),0);
+            input.restartInput(reader);
+        }
     }
     void startupPreparationFailed() { showStartupError(); }
 
     private void showStartupError() {
-        if(startupFailed || isFinishing()) return;
-        startupFailed=true; ui.removeCallbacks(rotateVerse); loading.setText(R.string.startup_error);
+        if(startupFailed || readerShown || isFinishing()) return;
+        startupFailed=true;ui.removeCallbacks(rotateVerse);ui.removeCallbacks(finishSplashHold);splashWaitScheduled=false;
+        preparation.setVisibility(View.VISIBLE);splashActions.setVisibility(View.VISIBLE);loading.setText(R.string.startup_error);
         new AlertDialog.Builder(this).setTitle("Could not open Bible Study")
             .setMessage("Please reopen the app. If setup was interrupted, it can resume without removing your notes.")
             .setPositiveButton("Retry",(dialog,which) -> recreate())
@@ -196,7 +230,14 @@ public final class MainActivity extends Activity {
         if(isFinishing()) return;
         if(pendingUrl==null) { revealReader(); return; }
         if (reader == null) {
-            reader = new WebView(this);
+            reader = new WebView(this) {
+                @Override public android.view.inputmethod.InputConnection onCreateInputConnection(android.view.inputmethod.EditorInfo info) {
+                    return notesFormattingKeyboardBlocked ? null : super.onCreateInputConnection(info);
+                }
+                @Override public boolean onCheckIsTextEditor() {
+                    return !notesFormattingKeyboardBlocked && super.onCheckIsTextEditor();
+                }
+            };
             WebSettings settings = reader.getSettings();
             settings.setJavaScriptEnabled(true); settings.setDomStorageEnabled(true);
             settings.setAllowFileAccess(false); settings.setAllowContentAccess(false);
@@ -207,6 +248,9 @@ public final class MainActivity extends Activity {
             reader.addJavascriptInterface(services, "IOWOAndroid");
             reader.setWebChromeClient(new WebChromeClient());
             reader.setWebViewClient(new WebViewClient() {
+                @Override public void onPageStarted(WebView view,String url,android.graphics.Bitmap icon) {
+                    setNotesFormatting(false);
+                }
                 @Override public void onPageFinished(WebView view,String url) {
                     if(!local(Uri.parse(url))) return;
                     view.evaluateJavascript("!!document.getElementById('bibleStudyRoot')",isReader -> {
@@ -239,6 +283,7 @@ public final class MainActivity extends Activity {
     }
 
     private void showAbout() {
+        ui.removeCallbacks(finishSplashHold);splashWaitScheduled=false;if(!readerShown)splashHoldFinished=false;
         if (aboutDialog != null && aboutDialog.isShowing()) return;
         Dialog dialog = new Dialog(this, android.R.style.Theme_Material_Light_NoActionBar);
         LinearLayout content = new LinearLayout(this); content.setOrientation(LinearLayout.VERTICAL);
@@ -270,6 +315,7 @@ public final class MainActivity extends Activity {
     // The guide is bundled independently of Python, login and library setup.
     // Its bridge exposes only closing the guide, never account APIs.
     void showTutorials(boolean firstUse) {
+        ui.removeCallbacks(finishSplashHold);splashWaitScheduled=false;if(!readerShown)splashHoldFinished=false;
         if(isFinishing() || (tutorialDialog!=null && tutorialDialog.isShowing())) return;
         services.tutorialVisible=true;
         Dialog dialog=new Dialog(this,android.R.style.Theme_Material_Light_NoActionBar);
@@ -337,8 +383,16 @@ public final class MainActivity extends Activity {
         super.onActivityResult(request, result, data);
         if (request == NativeServices.SAVE_DOCUMENT) services.saveDocumentResult(result, data == null ? null : data.getData());
     }
-    @Override protected void onPause() { if (reader != null) reader.onPause(); super.onPause(); }
-    @Override protected void onResume() { super.onResume(); if (reader != null) reader.onResume(); }
+    @Override protected void onPause() {
+        activityResumed=false;ui.removeCallbacks(rotateVerse);ui.removeCallbacks(finishSplashHold);
+        splashWaitScheduled=false;if(!readerShown)splashHoldFinished=false;
+        if(reader!=null)reader.onPause();super.onPause();
+    }
+    @Override protected void onResume() {
+        super.onResume();activityResumed=true;if(reader!=null)reader.onResume();
+        if(readerPrepared)revealReader();
+        else if(!startupFailed){ui.removeCallbacks(rotateVerse);ui.postDelayed(rotateVerse,5000);}
+    }
     @Override protected void onDestroy() { ui.removeCallbacksAndMessages(null);
         if(tutorialDialog!=null){tutorialDialog.setOnDismissListener(null);tutorialDialog.dismiss();tutorialDialog=null;}
         if(tutorialView!=null){tutorialView.removeJavascriptInterface("IOWOTutorial");tutorialView.destroy();tutorialView=null;}
